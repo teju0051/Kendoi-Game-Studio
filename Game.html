@@ -1,175 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang-="en-US">
 <head>
-  <meta charset="UTF-8">
-  <title>Staff Login Page</title>
-  <link rel="stylesheet" href="style.css">
+<title> Login page </title>
+<link rel="icon" href="file:///C:/Users/ADMIN/Downloads/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png">
+<!--
+<marquee scrool="left" scroll-speed="21"> Server are under maintainance.
+ </marquee> 
+-->
+<!--
+ <marquee scrool="left" scroll-speed="21"> This website is designed by Tejas Shinde.
+ </marquee>
+-->
 </head>
-<body oncontextmenu="return false">
-  <div class="container">
-    <form id="login-form">
-      <h1>Staff Login</h1>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-      <button type="submit">Login</button>
-      <p id="error-message"></p>
-    </form>
-  </div>
-  <script src="script.js"></script>
 
-  <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: linear-gradient(180deg, #0c1c3d 0%, #0c1c3d 40%, #102a4e 60%, #1d2c4a 100%);
+<body oncontextmenu="return false;">
+
+<!--
+<script type="text/Javascript">
+window.alert("Server are under maintainance")
+</script> 
+-->
+<hr>
+<center>
+<nav> || <button onclick="window.location.href='file:///C:/Program%20Files/Notepad%2B%2B/aparnaladisedresshop.html';"><b>User's login</b> </a>  </button>  
+ || <button class="button2" onclick="window.location.href='file:///C:/Program%20Files/Notepad%2B%2B/login.html';"><b>Staff's login</a></button> 
+ ||
+</center>
+<!--
+<button onclick="myFunction()"> Dark/Light mode</button>
+||
+-->
+ <hr>
+<style> 
+  body{
+    background-color: wheat;
   }
+ .nav {
+ 
+   Border-width: 10;
+   border height: 10;
+   }
+ button {
+   cursor: pointer;
+}   
+marquee {
+
+ background-color: red;
+ }
+ button {
+     background-color: sandybrown;
+	 Border-width: 3;
+   border-height: 10;
+   border-color: white;
+   font-family: serf;
+ }
+
+.container {
+
+ border-radius: 5;
+ }
+ h1 {
+  background-color:red;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  text: white;
   }
-  
-  #login-form {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  #error-message {
-    color: red;
-    text-align: center;
-  }
-  body {
-    background: linear-gradient(180deg, #0c1c3d 0%, #0c1c3d 40%, #102a4e 60%, #1d2c4a 100%);
-  }
-  .stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-  }
-  
-  .stars:after {
-    content: '';
-    display: block;
+ .dark-mode {
+  background-color: black;
+  color: white;
+  }|
+  img {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 0 0 2px 1px #fff;
-    transform: translate(-50%, -50%);
-    animation: twinkle 2s infinite;
+    top: 2333px;
   }
-  
-  @keyframes twinkle {
-    0% {
-      opacity: 0.8;
-    }
-    50% {
-      opacity: 0.2;
-    }
-    100% {
-      opacity: 0.8;
-    }
+  h2{
+    background-color: palegreen;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:indigo;
   }
-  
-  .moon {
-    position: fixed;
-    top: 20%;
-    left: 10%;
-    width: 100px;
-    height: 100px;
-    z-index: -1;
+  h3{
+    background-color: violet;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: forestgreen;
   }
-  
-  @media screen and (max-width: 768px) {
-    .moon {
-      width: 80px;
-      height: 80px;
-      top: 10%;
-      left: 5%;
-    }
+  table{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 </style>
-<script>
-  const form = document.getElementById('login-form');
-  const errorMessage = document.getElementById('error-message');
+
+  <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
+  <center>
+  <img src="file:///C:/Users/ADMIN/Downloads/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" class="img" alt="logo">
+</center>
+<hr>
+<center>
+  <h2>ABOUT US</h2>
+  <pre>
+<h3> Welcome Dear Visitor!,<br> Hope you are doing well. We are inbuilding our apps
+  to make some more fun & adventures games of all time,which people can remember for years.
+  Our team will try the best to Entertain you with more fantastic, adventures, mystery games.
+</h3>
   
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = form.username.value;
-    const password = form.password.value;
-  
-    // TODO: Implement server-side authentication
-    if (username === 'admin' && password === 'admin') {
-      window.location.href = 'https://teju0051.github.io/Lrtps.kamothe/Game.html';
-    }
-    if (username === 'tejas' && password === 'tejas123') {
-      window.location.href = 'https://teju0051.github.io/Lrtps.kamothe/Game.html';
-    }
-    if (username === 'abhijeet' && password === 'abhijeet091234') {
-      window.location.href = 'https://teju0051.github.io/Lrtps.kamothe/Game.html';
-       }
-    if (username === 'pravartak' && password === 'pravartak023431') {
-      window.location.href = 'https://teju0051.github.io/Lrtps.kamothe/Game.html';
-         }   
-    if (username === 'himali' && password === 'himali563457') {
-      window.location.href = 'https://teju0051.github.io/Lrtps.kamothe/Game.html';
-             }   
-    else {
-      errorMessage.textContent = 'Invalid username or password';
-    }
-  });
-  </script>
-  </body>
-</body>
+  </pre>
+  <hr>
+</center>
+<h2 align="center">Our Team Members</h2>
+<table border="3" align="center">
+  <tr>
+    <th>Sr.No</th>
+    <th>Name</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>1.</td>
+    <td>Pravatak </td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+    </tr>
+ <tr>
+  <td>2.</td>
+  <td>Abhijeet </td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+ </tr>
+ <tr>
+  <td>3.</td>
+  <td>Chirag </td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+ </tr>
+ <tr>
+  <td>4.</td>
+  <td>Himali </td>
+    <td>Game Designer</td>
+ </tr>
+ <td>5.</td>
+ <td>Viddhesh</td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+</tr>
+    <td>6.</td>
+    <td>Sayli</td>
+  <td>QA (Quality Assurer)/Game Tester</td> 
+  </tr>
+   <td>7.</td>
+ <td>Mrunali</td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+</tr>
+    <td>8.</td>
+    <td>Kunal</td>
+       <td>QA (Quality Assurer)/Game Tester</td>
+</tr>   
+<td>9.</td>
+ <td>Bhumi</td>
+    <td>QA (Quality Assurer)/Game Tester</td>
+    </tr>
+ <td>10.</td>
+ <td>Krushnali</td>
+   <td>QA (Quality Assurer)/Game Tester</td>
+       </tr>   
+</table>
+<center>want to be one of them?? <a href="Apply.com">Join us</a>
+<hr>
+&#169;2023
+<hr>
+</center>
 </body>
 </html>
-
-
-Staff login please don't change this code!!!
