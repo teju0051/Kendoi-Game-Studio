@@ -1,136 +1,300 @@
-<html lang-="en-US">
+<!DOCTYPE html>
+<html>
 <head>
-<title> TGAMES </title>
-<link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="image">
-<!--
-<marquee scrool="left" scroll-speed="21"> Server are under maintainance.
- </marquee> 
--->
-<!--
- <marquee scrool="left" scroll-speed="21"> This website is designed by Tejas Shinde.
- </marquee>
--->
+	<title>TGames</title>
+	<link rel="stylesheet" href="style.css">
+	
 </head>
+<body>
+	<header>
+		<img src="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="image">
+		<nav>
+			<ul>
+				<li><a href="#" class="token">Home</a></li>
+				<li><a href="#"class="token">Games</a></li>
+				<li><a href="#"class="token">About Us</a></li>
+				<li><a href="#"class="token">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="banner">
+			<h1>Welcome to TGames</h1>
+			<p>Experience the ultimate gaming fun with TGames.</p>
+		</section>
+		
+		<section id="featured-games">
+			<h2>Featured Games</h2>
+			<ul>
+				<li>
+					<a href="https://teju0051.github.io/Game/snakegame.html">
+						<img src="https://i.ibb.co/V2YtSk2/snake-logo.jpg" alt="Your Game Logo" style="width: 100%;">
+					  </a>
+					<h3>Snake </h3>
+					<p>Snake will eat the food and will get bigger the more you score the more your snake will be big.<br> <b>ONLY FOR PC</b></p>
+				</li>
+				<li>
+					<a href="https://teju0051.github.io/Game/tictactoe.html">
+						<img src="https://i.ibb.co/xhhJYk7/tictactie-logo.png" alt="Your Game Logo" style="width: 100%;">
+						</a>
+					<h3>Tic-Tac-Toe</h3>
+					<p>2 Players Tic tac toe game.<br> <b>player Vs computer comming soon!</b> </p>
+				</li>
+				<li>
+					<!---
+					<a href="https://teju0051.github.io/Lrtps.kamothe/Game.html"disabled> -->
+						<img src="https://i.ibb.co/G5F0RwN/new.png" alt="Your Game Logo" style="width: 100%;" disabled>
+						</a>
+					<h3>Mini Rush</h3>
+					<p>The character nammed Mini will run to her home while surviving many object between her making her difficult to reach home<br><b>COMING SOON!</b></p>
+				</li>
+			</ul>
+		</section>
+		
+		<section id="about">
+			<h2>About TGames</h2>
+			<p class="paro">TGames is a gaming company that provides the best gaming experience for all the gamers out there. With our wide range of games, we ensure that you will never get bored. We are dedicated to providing you with the latest and most popular games that will keep you engaged for hours.</p>
+		</section>
+	
+	
+	<footer>
+		<p>&copy; 2023 TGames. All rights reserved.</p>
+	</footer>
+	<style>
+		.paro{color:white;
+			   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		
+		}
+	h2{
+		color:white;
+		text-align: center;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	    background-color: #333;
+	}
+		img{
+			position:relative;
+			width: 5%;
+			height: 50%;
+			border-style: double;
+			border-radius: 10px
+			
+		
+			
+		}
+		.token{ color: black;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+		body {
+			font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: black;
+			color: black;
+			background-image: url('https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png 'type="image");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+		}
 
-<body oncontextmenu="return false;">
+		b{
+			color:red;
+		}
+		header {
+			background-color: white;
+			color: pink;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+		
+		nav ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		nav li {
+			margin: 0 10px;
+		}
+		
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+		
+		nav a:hover {
+			color: #ccc;
+		}
+		
+		main {
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		#banner {
+			background-image: url(banner.jpg);
+			background-size: cover;
+			background-position: center;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 400px;
+			text-align: center;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+			
+			#featured-games {
+			margin-top: 50px;
+			}
+			
+			#featured-games ul {
+			display: flex;
+			justify-content: space-between;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			}
+			#featured-games li {
+				background-color: #f9f9f9;
+				border: 1px solid #ccc;
+				box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+				flex-basis: calc(33.33% - 20px);
+				margin: 0 10px;
+				padding: 20px;
+				text-align: center;
+				}
+				
+				#featured-games li:hover {
+				box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+				transform: translateY(-5px);
+				}
+				
+				#featured-games li img {
+				max-width: 100%;
+				}
+				
+				#about {
+				margin-top: 50px;
+				}
+				
+				#contact {
+				margin-top: 50px;
+				}
+				
+				form label {
+				display: block;
+				margin-bottom: 5px;
+				}
+				
+				form input,
+				form textarea {
+				border: 1px solid #ccc;
+				font-size: 16px;
+				margin-bottom: 20px;
+				padding: 10px;
+				width: 100%;
+				}
+				
+				form input[type="submit"] {
+				background-color: #333;
+				color: #fff;
+				cursor: pointer;
+				font-size: 16px;
+				padding: 10px 20px;
+				}
+				
+				form input[type="submit"]:hover {
+				background-color: #222;
+				}
+				
+				footer {
+				background-color: #f9f9f9;
+				padding: 20px;
+				text-align: center;
+				}
+				
+				footer p {
+				margin: 0;
+				padding: 0;
+				}
+				
+				@media (max-width: 768px) {
+				header {
+				flex-direction: column;
+				}
+				nav ul {
+					flex-direction: column;
+				}
+				
+				nav li {
+					margin: 10px 0;
+				}
+				
+				#featured-games li {
+					flex-basis: 100%;
+					margin: 10px 0;
+				}
+			}				
+		
+	</style>
+	<script>
+		public Game(String name, String description, String imageUrl) {
+			this.name = name;
+			this.description = description;
+			this.imageUrl = imageUrl;
+		}
+		
+		// getters and setters
+		
+		public String getName() {
+			return name;
+		}
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public String getDescription() {
+			return description;
+		}
+		
+		public void setDescription(String description) {
+			this.description = description;
+		}
+		
+		public String getImageUrl() {
+			return imageUrl;
+		}
+		
+		public void setImageUrl(String imageUrl) {
+			this.imageUrl = imageUrl;
+		}
+	}
 
-<!--
-<script type="text/Javascript">
-window.alert("Server are under maintainance")
-</script> 
--->
-
-<!--
-<button onclick="myFunction()"> Dark/Light mode</button>
-||
--->
- <hr>
-<style> 
-  body{
-    background-color: wheat;
-  }
- .nav {
- 
-   Border-width: 10;
-   border height: 10;
-   }
- button {
-   cursor: pointer;
-}   
-marquee {
-
- background-color: red;
- }
- button {
-     background-color: sandybrown;
-	 Border-width: 3;
-   border-height: 10;
-   border-color: white;
-   font-family: serf;
- }
-
-.container {
-
- border-radius: 5;
- }
- h1 {
-  background-color:red;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
-  text: white;
-  }
- .dark-mode {
-  background-color: black;
-  color: white;
-  }|
-  img {
-    position: absolute;
-    top: 2333px;
-  }
-  h2{
-    background-color: palegreen;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color:indigo;
-  }
-  h3{
-    background-color: violet;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: forestgreen;
-  }
-  table{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-</style>
-
-  <script>document.addEventListener('contextmenu', event => event.preventDefault());</script>
-  <center>
-<img src="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="image">
-</center>
-<hr>
-<center>
- <h2>Our Games</h2>
-  <body bgcolor="orange">
-		<div style="display: inline-block; margin-right: 10px;" class="disable-after-click">
-			<div style="border: 1px solid black; padding: 10px; width: 200px; background-color:white">
-			  <a href="https://teju0051.github.io/Game/snakegame.html">
-				<img src="https://i.ibb.co/V2YtSk2/snake-logo.jpg" alt="Your Game Logo" style="width: 100%;">
-			  </a>
-			  <h4 style="text-align: center;">Snake</h4>
-			</div>
-		  </div>
-		  
-		  
-      <div style="display: inline-block; margin-right: 10px;" class="disable-after-click" >
-        <div style="border: 1px solid black; padding: 10px; width: 200px; background-color:white">
-          <a href="https://teju0051.github.io/Game/tictactoe.html">
-          <img src="https://i.ibb.co/xhhJYk7/tictactie-logo.png" alt="Your Game Logo" style="width: 100%;">
-          </a>
-          <h4 style="text-align: center;">Tic-Tac-Toe</h4>
-        </div>
-        </div>
-    
-        <div style="display: inline-block; margin-right: 10px;" class="disable-after-click" >
-          <div style="border: 1px solid black; padding: 10px; width: 200px; background-color:white">
-            <a href="https://teju0051.github.io/Lrtps.kamothe/Game.html">
-            <img src="https://i.ibb.co/G5F0RwN/new.png" alt="Your Game Logo" style="width: 100%;">
-            </a>
-            <h4 style="text-align: center;">Save yourself</h4>
-          </div>
-          </div>
-  <h2>ABOUT US</h2>
-  <pre>
-<h3> Welcome Dear Visitor!,<br> Hope you are doing well. We are inbuilding our apps
-  to make some more fun & adventures games of all time,which people can remember for years.
-  Our team will try the best to Entertain you with more fantastic, adventures, mystery games.
-</h3>
-  
-  </pre>
-  <hr>
-</center>
-
-<center>
-&#169;2023 TGAMES
-<hr>
-</center>
+	public class TGamesPlatform {
+	private List<Game> games;
+		public TGamesPlatform() {
+			games = new ArrayList<>();
+		}
+		
+		public void addGame(Game game) {
+			games.add(game);
+		}
+		
+		// getters
+		
+		public List<Game> getGames() {
+			return games;
+		}
+	}				
+	</script>
 </body>
 </html>
