@@ -202,14 +202,18 @@
       
 		<h4 class="but">OPTIONS</h4>
 		<button onclick="location.reload()">RESTART</button>
-		<button onclick="window.location.href='https://teju0051.github.io/TService/home.html';"> BACK</button>
+		<button id="backButton">Back</button>
+
 		<button onclick="alert('COOMING SOON')">PLAY WITH COMPUTER</button>
 		<button onclick="window.location.href='https://forms.gle/fnfGjyd4nwComz9F8';">FEEDBACK</button>
          <br>
          <br>
           <script>
         
-          
+          document.getElementById("backButton").addEventListener("click", function() {
+  window.history.back();
+});
+
         
         
             var player = "X";
