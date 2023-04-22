@@ -405,14 +405,19 @@ rightButton.addEventListener("click", function() {
     snake.dx = grid;
   }
 });
-  
+function goBack() {
+  window.history.back();
+}
 </script>
 
 <h4 class="but">Controls</h4>
 <button id="up">Up</button>
 <button id="down">Down</button>
 <button id="left">Left</button>
-<button id="right">Right</button> <br><br>
+<button id="right">Right</button> ||
+<button onclick="goBack()">Go Back</button>||
+
+<br><br>
 
 <footer> &copy; 2023 T-Service. All rights reserved.</footer>
 </body>
