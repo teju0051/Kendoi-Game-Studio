@@ -1,317 +1,531 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tic Tac Toe</title>
-  <link rel="icon" type="x-image" href="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png">
-	<style>
-		@media (min-width: 768px) {
-			.logo {
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			  width: 100px; /* adjust the size as needed */
-			  height: auto;
-			  margin: 10px;
-			}
-		}	.but{
-      background-color: #333;
-      padding: 20px;
-    }
-  
-    .img {
-      height: 300px;
-      width: 300px;
-      margin-bottom: 20px;
-    }
-  
-    h3{
-      background-color: #333;
-      padding: 20px;
-      text-align: center;
-    }
-  
- 
-    
-  
-    /* Body */
-    body {
-        background-color: #111;
-        color: green;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 18px;
-        line-height: 1.5;
-    }
-  
-    /* Header */
-    header {
-        padding: 20px;
-        text-align: center;
-        background-color: #222;
-        border-bottom: 2px solid green;
-    }
-  
-    /* Navigation */
-    nav {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #333;
-        border: 2px solid green;
-        box-shadow: 0 0 10px green;
-    }
-  
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-  
-    nav li {
-        display: inline-block;
-        margin-right: 20px;
-    }
-  
-    nav a {
-        color: #fff;
-        text-decoration: none;
-    }
-  
-    nav a:hover {
-        color: green;
-        text-decoration: underline;
-    }
-  
-    /* Main Content */
-    main {
-        padding: 20px;
-        background-color: #222;
-        border: 2px solid green;
-        box-shadow: 0 0 10px green;
-    }
-  
-    /* Buttons */
-    button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: green;
-        color: #fff;
-        font-size: 18px;
-        cursor: pointer;
-    }
-  
-    button:hover {
-        background-color: rgb(1, 255, 1);
-    }
-  
-    /* Images */
-    img {
-        max-width: 100%;
-        height: auto;
-        margin: 20px 0;
-        box-shadow: 0 0 10px green;
-        max-height: 130px;
-        align-content:flex-start;
-    }
-  
-    /* Footer */
-    footer {
-        padding: 20px;
-        text-align: center;
-        background-color: #222;
-        border-top: 2px solid green;
-    }
-    #button-container {
-      position: fixed;
-      top: 10;
-      left: 120;
-      transform: translateY(90%);
-      transform: translateX(30%);
-    
-    }
-    /* Style for the button */
-  
+<title>T-Service</title>
+<link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="image">
+<style>
+body {
+  background-color: gray;
+  zoom: 110%;
+}
 
-    
-		table {
-			border-collapse: collapse;
-			margin: auto;
-		}
-		td {
-			width: 100px;
-			height: 100px;
-			text-align: center;
-			vertical-align: middle;
-			border: 1px solid black;
-			font-size: 48px;
-			cursor: pointer;
-		}
-		td:hover {
-			background-color: #eee;
-		}
-    hr{
-      color:red;
-    }
-	h3{
-		color:blue;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	}
-	img {
-		max-height: 130px;
-		margin: 10px; 
-		align-content:flex-start;
-	  }
-  </style>
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  max-width: 600px;
+  background: black;
+  padding: 20px;
+  color: WHITE;
+  border: 1px solid grey;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
+  color:  rgb(0, 236, 252);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button {
+  color: black;
+  padding: 14px 20px;
+  margin: 2px 0;
+  border: auto;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.center-left {
+  top: 1000%;
+  transform: translateY(-50%);
+  transform: translateX(-100%);
+  color:black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.center-right {
+  right: 0%;
+  bottom: 45%;
+  transform: translateY(50%);
+  transform: translateX(60%);
+  background-color:  rgb(0, 236, 252);
+  color:black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+</style>
 </head>
 <body>
-	<header>
-		<img class="logo" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
-		<h1>Tic-Tac-Toe</h1>
-	</header><nav>
-    <ul>
-      <li><a href="https://teju0051.github.io/TService/T-Games.html">HOME</a></li>
-      <li><a href="https://teju0051.github.io/TService/T-Art.html">T-ART</a></li>
-      <li><a href="https://teju0051.github.io/TService/home.html">T-SERVICE</a></li>
-      <li><a href="https://teju0051.github.io/TService/T-Tech.html">T-TECH</a></li>
-      <li><a href="https://teju0051.github.io/TService/ourteam.html">OUR TEAM</a></li>
-      </ul>
-      </nav>
-      <br>
-        <body>
-        
-          <center>
-          <table border="4">
-            <tr>
-              <td bgcolor="cyan" id="cell00"></td>
-              <td bgcolor="cyan"id="cell01"></td>
-              <td bgcolor="cyan"id="cell02"></td>
-            </tr>
-            <tr>
-              <td bgcolor="cyan"id="cell10"></td>
-              <td bgcolor="cyan"id="cell11"></td>
-              <td bgcolor="cyan" id="cell12"></td>
-            </tr>
-            <tr>
-              <td bgcolor="cyan"id="cell20"></td>
-              <td bgcolor="cyan"id="cell21"></td>
-              <td bgcolor="cyan"id="cell22"></td>
-            </tr>
-          </table>
-        </center>
-        <br>
-        <hr>
-        <br>
+<div class="popup-container">
+  <div class="popup-content">
+    <h1>INFORMATION</h1>
+    <hr>
+    <h6 style="color: red;"><i></i></h6>
+    <p>The tournament of TGC has been ended. Please check back later for the new season.</p>
+    <br>
+    <button class="center-left" onclick="window.location.href='https://teju0051.github.io/TService/home.html';"><b>CANCEL</b></button>
+    <button class="center-right" onclick="window.open('https://teju0051.github.io/TService/home.html','_blank')"><b>CONFIRM</b></button>
+  </div>
+</div>
+
+<script>
+document.onkeydown = function(e) {
+  if (e.keyCode == 123) {
+    return false;
+  }
+}
+</script>
+
+</body>
+</html>
+<style>
+  @media (min-width: 768px) {
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px; /* adjust the size as needed */
+      height: auto;
+      margin: 10px;
+    }
+  }	.but{
+    background-color: #333;
+    padding: 20px;
+  }
+
+  .img {
+    height: 300px;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  h3{
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+  
+
+  /* Body */
+  body {
+      background-color: #111;
+      color: rgb(0, 236, 252);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 18px;
+      line-height: 1.5;
+  }
+
+  /* Header */
+  header {
+      padding: 20px;
+      text-align: center;
+      background-color: #222;
+      border-bottom: 2px solid  rgb(0, 236, 252);
+  }
+
+  /* Navigation */
+  nav {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      border: 2px solid  rgb(0, 236, 252);
+      box-shadow: 0 0 10px  rgb(0, 236, 252);
+  }
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  nav li {
+      display: inline-block;
+      margin-right: 20px;
+  }
+
+  nav a {
+      color: #fff;
+      text-decoration: none;
+  }
+
+  nav a:hover {
+      color:  rgb(0, 236, 252);
+      text-decoration: underline;
+  }
+
+  /* Main Content */
+  main {
+      padding: 20px;
+      background-color: #222;
+      border: 2px solid  rgb(0, 236, 252);
+      box-shadow: 0 0 10px  rgb(0, 236, 252);
+  }
+
+  /* Buttons */
+  button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color:  rgb(0, 236, 252);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: rgb(0, 128, 124);
+  }
+
+  /* Images */
+  img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      box-shadow: 0 0 10px  rgb(0, 236, 252);
+      max-height: 130px;
+      align-content:flex-start;
+  }
+
+  /* Footer */
+  footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #222;
+      border-top: 2px solid  rgb(0, 236, 252);
+  }
+  #button-container {
+    position: fixed;
+    top: 10;
+    left: 120;
+    transform: translateY(90%);
+    transform: translateX(30%);
+  
+  }
+  /* Style for the button */
+
+
+  
+  table {
+    border-collapse: collapse;
+    margin: auto;
+  }
+  td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    font-size: 48px;
+    cursor: pointer;
+  }
+  td:hover {
+    background-color: #eee;
+  }
+  hr{
+    color:red;
+  }
+h3{
+  color:blue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+img {
+  max-height: 130px;
+  margin: 10px; 
+  align-content:flex-start;
+  }
+</style>
+</head>
+<body>
+<header>
+  <img class="logo" src="https://www.linkpicture.com/q/newlogo_5.png" alt="Logo">
+
+  <h1>TGC E-SPORT MAHARASHTRA</h1>
+</header><nav>
+  <ul>
+    <li><a href="https://teju0051.github.io/TService/home.html">HOME</a></li>
+    <li><a href="https://teju0051.github.io/TService/T-Art.html">T-ART</a></li>
+    <li><a href="https://teju0051.github.io/TService/home.html">T-SERVICE</a></li>
+    <li><a href="https://teju0051.github.io/TService/T-Tech.html">T-TECH</a></li>
+    <li><a href="https://teju0051.github.io/TGames/Home.html">T-GAMES</a></li>
+    <li><a href="https://www.youtube.com/@TGC_ESPORTS/about">ABOUT US</a></li>
+   
+    </ul>
+    </nav>
+    <br>
+      <body>
       
-		<h4 class="but">OPTIONS</h4>
-		<button onclick="location.reload()">RESTART</button>
-		<button id="backButton">BACK</button>
+        <main>
+          <h1>Team Scoreboard</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Team Name</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <td>1</td>
+                <td> FIRE HANDED TGC</td>
+                <td class="counter">0</td>
+              </tr>
+             
+              <tr>
+                <td>1</td>
+                <td>Charge Handed TGC </td>
+                <td class="counter">0</td>
+              </tr>
+              <tr>
+              
+                  <td>1</td>
+                  <td>ICE HANDED TGC</td>
+                  <td class="counter">0</td>
+                </tr>
+              
+              
+            </tbody>
+          </table>
+              <BR><BR><HR>  <BR>
+            
+                  <h1 align="center">Player's Information</h1>
+                  <hr>
+              <table>
+                 
+                  <thead>
+                      <tr>
+                                      
+                          <th>ICE HANDED TGC</th>
+                          <th>UID</th>
+                     
+                        
+                        
+                      
+                      </tr>
+                      </thead>
+                      <tr>
+                      <td>TGC★TECH★KP</td>
+                      <td>1550193499</td>
+                     
+                      </tr>
+                      <td>Mr. Ronit </td> 
+                      <td>1976644613</td>
+          
+                      </tr>
+                      <td>Sugat_sg</td> 
+                      <td>1994648509</td>
+            
+                      </tr>
+                      <td>Paras786786 </td> 
+                      <td>447745139</td>
+      
+                     
+      
+                                    <thead>
+                                      <tr>
+                                                      
+                                          <th>FIRE HANDED TGC</th>
+                                          <th>UID</th>
+                                     
+                                        
+                                        
+                                      
+                                      </tr>
+                                      </thead>
+                                      <tr>
+                                      <td>★TGC★LEGEND★</td>
+                                      <td>1622269870</td>
+                            
+                                      </tr>
+                                      <td>★TGC★PARAB★</td> 
+                                      <td>1882750141</td>
+                            
+                                      </tr>
+                                      <td>*TGC*WARLOAD</td> 
+                                      <td>1884011426</td>
+                                      </tr>
+                                      <td>★TGC★STARBOY</td>
+                                      <td>2517698741</td>
+                                     </tr>
+                                      <td>★TGC★SHRUTI★</td> 
+                                      <td>2090089434</td>
+                        
+                                    </tr>
+                                    <thead>
+                                      <tr>
+                                                      
+                                          <th>CHARGE HANDED TGC</th>
+                                          <th>UID</th>
+                                     
+                                        
+                                        
+                                      
+                                      </tr>
+                                      </thead>
+                                      <tr>
+                                      <td>★TGC★EAGLE★</td>
+                                      <td>2175216926</td>
+                            
+                                      </tr>
+                                      <td>★TGC★DIVINE★</td> 
+                                      <td>2204715071</td>
+                            
+                                      </tr>
+                                      <td>IND SWARUP</td> 
+                                      <td>1839326560</td>
+                                      </tr>
+      
+                                      <td>★TGC★HUNTER★</td>
+                                      <td>2431326113</td>
+                                     </tr>
+                              
+                               
+        </table>
+      <hr>
+      <h2 align="center">Previous Season winning team</h2>
+      <table>
+          <thead>
+              <tr>
+                              
+                  <th>Winning Team</th>
+                  <th>Season</th>
+              </tr></thead>
+              <td>Fire handed tgc</td>
+              <td>1</td></tr>
+                                  
+                    <tr>  <td>REVENGERS</td>
+                      <td>2</td></tr>
+      
+                      <td>Fire handed tgc</td>
+                      <td>3</td></tr>
+                
+          
+      
+      </table>
+      <hr>
+      <h2 align="center">Organisation Details</h2>
+      <table>
+        <tr>
+                        <THEAD>
+                                    
+                        <th>TGC OFFICIALS</th>
+                        <th>Contact</th>
+                        <th>role</th>
+                        <th>Reason</th>
+                      
+                      
+                    
+                    </tr></thead>
+                    <tr>
+                        <td>TEJAS</td>
+                        <td><a href="https://www.instagram.com/tgc_esports66/">
+                            <button>CHAT NOW</button>
+                          </a></td>
+                          <td>MANAGEMENT TEAM</td>
+                        <td>1) QUERY <br>2) FOUND PLAYER USING HACK <BR>3)ERROR IN ABOVE DATA</td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Tournament Live On</td>
+                            <td colspan="4"><a href="https://www.youtube.com/@TGC_ESPORTS/streams">
+                                <button>Click Here to see Live</button>
+                            </a></td></tr>
+                            <tr>
+                            <td>NOTE:</td>
+                            <td colspan="4">The management team reserve right <br>to change rules without prior notice.</td>
+                   </tr>
+                    </table>
+        
 
-		<button onclick="alert('COOMING SOON')">PLAY WITH COMPUTER</button>
-		<button onclick="window.location.href='https://forms.gle/fnfGjyd4nwComz9F8';">FEEDBACK</button>
-         <br>
-         <br>
-          <script>
-        
-          document.getElementById("backButton").addEventListener("click", function() {
-  window.history.back();
-});
+	</main>
+  <STYLE> table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  th, td {
+    border: none;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  thead {
+    background-color:  rgb(0, 236, 252);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:#333;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #333;
+  }
+  
+  tbody td:first-child {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 24px;
+  }
+  
+  tbody td:nth-child(2) {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  tbody td:last-child {
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  tbody tr:hover {
+    background-color:  rgb(0, 236, 252);
+    color: #222;
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
 
-        
-        
-            var player = "X";
-            var board = [
-              ["", "", ""],
-              ["", "", ""],
-              ["", "", ""]
-            ];
-        
-            function handleClick(row, col) {
-              var cell = document.getElementById("cell" + row + col);
-              if (board[row][col] == "") {
-                cell.innerHTML = player;
-                board[row][col] = player;
-                if (checkWin()) {
-                  alert(player + " wins!");
-                  resetBoard();
-                } else if (checkTie()) {
-                  alert("It's a tie!");
-                  resetBoard();
-                } else {
-                  player = (player == "X") ? "O" : "X";
-                }
-              }
-            }
-        
-            function checkWin() {
-              for (var i = 0; i < 3; i++) {
-                if (board[i][0] != "" && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
-                  return true;
-                }
-                if (board[0][i] != "" && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
-                  return true;
-                }
-              }
-              if (board[0][0] != "" && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-                return true;
-              }
-              if (board[0][2] != "" && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-                return true;
-              }
-              return false;
-            }
-        
-            function checkTie() {
-              for (var i = 0; i < 3; i++) {
-                for (var j = 0; j < 3; j++) {
-                  if (board[i][j] == "") {
-                    return false;
-                  }
-                }
-              }
-              return true;
-            }
-        
-            function resetBoard() {
-              player = "X";
-              board = [
-                ["", "", ""],
-                ["","", ""],
-                ["", "", ""]
-                ];
-                for (var i = 0; i < 3; i++) {
-                for (var j = 0; j < 3; j++) {
-                document.getElementById("cell" + i + j).innerHTML = "";
-                }
-                }
-                }
-                  // Add event listeners to each cell
-          for (var i = 0; i < 3; i++) {
-            for (var j = 0; j < 3; j++) {
-              document.getElementById("cell" + i + j).addEventListener("click", function() {
-                handleClick(parseInt(this.id[4]), parseInt(this.id[5]));
-              });
-            }
-          }
-          function botTurn() {
-            var i = Math.floor(Math.random() * 3);
-            var j = Math.floor(Math.random() * 3);
-            if (board[i][j] == "") {
-              board[i][j] = "O";
-              document.getElementById("cell" + i + j).innerHTML = "O";
-              return true;
-            }
-            return false;
-          }
-        
-        
-        </script>
-        
-        
-	<footer>
+footer p {
+    font-size: 18px;
+    margin: 0;
+}</STYLE>
+      <br>
+ 
+      <br>
+
+  <footer>
 		<p id="welcome-text">&copy; 2023 T-Service. All rights reserved.</p>
 	</footer>
+
+  
   <div class="loading-screen">
-    <img class="logol" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
-    <h2>Tic-Tac-Toe</h2>
+    <img class="logol" src="https://www.linkpicture.com/q/newlogo_5.png" alt="Logo">
+    <h2>E-Sport Tournament</h2>
     <p>Loading...</p>
 </div>
   <script>
@@ -320,9 +534,10 @@
         var loadingScreen = document.querySelector('.loading-screen');
         setTimeout(function() {
             loadingScreen.style.display = 'none';
-        }, 5000);
+        }, 10000000);
     };
 </script>
+
 <style>
   /* Your existing styles here */
 
@@ -342,12 +557,12 @@
   }
 
   .loading-screen h2 {
-      color: green;
+      color:  rgb(0, 236, 252);
       font-size: 24px;
   }
 
   .loading-screen p {
-      color: green;
+      color: rgb(0, 236, 252);
       font-size: 18px;
   }
 
@@ -363,6 +578,5 @@
       100% { opacity: 0; }
   }
 </style>
-        </body>
-        </html>
-    
+    </body>
+    </html>
