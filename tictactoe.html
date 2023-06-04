@@ -1,43 +1,324 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Site Unreachable</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+<title>Tic Tac Toe</title>
+  <link rel="icon" type="x-image" href="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png">
+	<style>
+		@media (min-width: 768px) {
+			.logo {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100px; /* adjust the size as needed */
+			  height: auto;
+			  margin: 10px;
+			}
+		}	.but{
+      background-color: #333;
+      padding: 20px;
+    }
+
+    .img {
+      height: 300px;
+      width: 300px;
+      margin-bottom: 20px;}
+  body {
+        background-color: #111;
+        color: green;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+        padding: 20px;
+        text-align: center;
+        background-color: #222;
+        border-bottom: 2px solid green;
+    }
+
+    /* Navigation */
+    nav {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #333;
+        border: 2px solid green;
+        box-shadow: 0 0 10px green;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }   nav li {
+        display: inline-block;
+        margin-right: 20px;
+    }nav a {
+        color: #fff;
+        text-decoration: none;
+    }  nav a:hover {
+        color: green;
+        text-decoration: underline;
+    }  main {
+        padding: 20px;
+        background-color: #222;
+        border: 2px solid green;
+        box-shadow: 0 0 10px green;
+    } button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: green;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+    }    button:hover {
+        background-color: rgb(1, 255, 1);
+    }   img {
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+        box-shadow: 0 0 10px green;
+        max-height: 130px;
+        align-content:flex-start;
+    } footer {
+        padding: 20px;
+        text-align: center;
+        background-color: #222;
+        border-top: 2px solid green;
+    }
+    #button-container {
+      position: fixed;
+      top: 10;
+      left: 120;
+      transform: translateY(90%);
+      transform: translateX(30%);
+
+    }table {
+			border-collapse: collapse;
+			margin: auto;
+		}
+		td {
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid black;
+			font-size: 48px;
+			cursor: pointer;
+		}
+		td:hover {
+			background-color: #eee;
+		}
+    hr{
+      color:red;
+    }
+	h3{
+		color:blue;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+	img {
+		max-height: 130px;
+		margin: 10px; 
+		align-content:flex-start;
+	  }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Site Unreachable</h1>
-    <p>We're sorry, but the game you are trying to access is currently unreachable.</p>
-    <p>Please try again later.</p>
-  </div>
-  <style>body {
-    background-color: #f1f1f1;
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 50px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 100px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  p {
-    margin-bottom: 20px;
-  }
-  footer p {
-    font-size: 18px;
-    margin: 0;
-}
-  </style>
+	<header>
+		<img class="logo" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
+		<h1>Tic-Tac-Toe</h1>
+	</header><nav>
+    <ul>
+      <li><a href="https://teju0051.github.io/TService/T-Games.html">HOME</a></li>
+      <li><a href="https://teju0051.github.io/TService/T-Art.html">T-ART</a></li>
+      <li><a href="https://teju0051.github.io/TService/home.html">T-SERVICE</a></li>
+      <li><a href="https://teju0051.github.io/TService/T-Tech.html">T-TECH</a></li>
+      <li><a href="https://teju0051.github.io/TService/ourteam.html">OUR TEAM</a></li>
+      </ul>
+      </nav><br><body>
 
-</body>
-</html>
+          <center>
+          <table border="4">
+            <tr>
+              <td bgcolor="cyan" id="cell00"></td>
+              <td bgcolor="cyan"id="cell01"></td>
+              <td bgcolor="cyan"id="cell02"></td>
+            </tr>
+            <tr>
+              <td bgcolor="cyan"id="cell10"></td>
+              <td bgcolor="cyan"id="cell11"></td>
+              <td bgcolor="cyan" id="cell12"></td>
+            </tr>
+            <tr>
+              <td bgcolor="cyan"id="cell20"></td>
+              <td bgcolor="cyan"id="cell21"></td>
+              <td bgcolor="cyan"id="cell22"></td>
+            </tr>
+          </table>
+        </center>
+        <br>
+        <hr>
+        <br>
+
+		<h4 class="but">OPTIONS</h4>
+		<button onclick="location.reload()">RESTART</button>
+		<button id="backButton">BACK</button>
+
+		<button onclick="alert('COOMING SOON')">PLAY WITH COMPUTER</button>
+		<button onclick="window.location.href='https://forms.gle/fnfGjyd4nwComz9F8';">FEEDBACK</button>
+         <br>
+         <br>
+          <script>
+
+          document.getElementById("backButton").addEventListener("click", function() {
+  window.history.back();
+});
+
+
+
+            var player = "X";
+            var board = [
+              ["", "", ""],
+              ["", "", ""],
+              ["", "", ""]
+            ];
+
+            function handleClick(row, col) {
+              var cell = document.getElementById("cell" + row + col);
+              if (board[row][col] == "") {
+                cell.innerHTML = player;
+                board[row][col] = player;
+                if (checkWin()) {
+                  alert(player + " wins!");
+                  resetBoard();
+                } else if (checkTie()) {
+                  alert("It's a tie!");
+                  resetBoard();
+                } else {
+                  player = (player == "X") ? "O" : "X";
+                }
+              }
+            }
+
+            function checkWin() {
+              for (var i = 0; i < 3; i++) {
+                if (board[i][0] != "" && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+                  return true;
+                }
+                if (board[0][i] != "" && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+                  return true;
+                }
+              }
+              if (board[0][0] != "" && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+                return true;
+              }
+              if (board[0][2] != "" && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+                return true;
+              }
+              return false;
+            }
+
+            function checkTie() {
+              for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 3; j++) {
+                  if (board[i][j] == "") {
+                    return false;
+                  }
+                }
+              }
+              return true;
+            }
+
+            function resetBoard() {
+              player = "X";
+              board = [
+                ["", "", ""],
+                ["","", ""],
+                ["", "", ""]
+                ];
+                for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 3; j++) {
+                document.getElementById("cell" + i + j).innerHTML = "";
+                }
+                }
+                }
+                  // Add event listeners to each cell
+          for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+              document.getElementById("cell" + i + j).addEventListener("click", function() {
+                handleClick(parseInt(this.id[4]), parseInt(this.id[5]));
+              });
+            }
+          }
+          function botTurn() {
+            var i = Math.floor(Math.random() * 3);
+            var j = Math.floor(Math.random() * 3);
+            if (board[i][j] == "") {
+              board[i][j] = "O";
+              document.getElementById("cell" + i + j).innerHTML = "O";
+              return true;
+            }
+            return false;
+          }
+
+
+        </script>
+
+
+	<footer><p id="welcome-text">&copy; 2023 T-Service. All rights reserved.</p>
+    <div class="loading-screen">
+      <img class="logol" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
+      <h2>Tic-Tac-Toe</h2>
+      <p>Loading...</p>
+    
+    </div>
+    <script>
+      // Hide the loading screen after 5 seconds
+      window.onload = function() {
+          var loadingScreen = document.querySelector('.loading-screen');
+          setTimeout(function() {
+              loadingScreen.style.display = 'none';
+          }, 5000);
+      };
+    </script>
+    <style>
+    /* Your existing styles here */
+    
+    /* New styles for the loading screen */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 999;
+    }
+    
+    .loading-screen h2 {
+        color: green;
+        font-size: 24px;
+    }
+    
+    .loading-screen p {
+        color: green;
+        font-size: 18px;
+    }
+    
+    .loading-screen .logo {
+        opacity: 0;
+        animation: fade-in-out 5s ease-in-out;
+    }
+    
+    @keyframes fade-in-out {
+        0% { opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    </style>
+    </body>
+    </html>
