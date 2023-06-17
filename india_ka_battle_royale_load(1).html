@@ -76,7 +76,15 @@
               setTimeout(function() {
                 window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(2).html'; // Replace 'newpage.html' with the desired URL
               }, 7000);
-          
+             //ban mobile devices
+        window.addEventListener('DOMContentLoaded', function() {
+          var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+          if (isMobile) {
+              alert("System has detected you are using mobile, This game only support PC.");
+          }
+      });
+      
           </script>
     </body>
 </html>
