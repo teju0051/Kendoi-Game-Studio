@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>T-Games Login</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+ <link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="x-icon/image">
+</head>
+<body>
+	<div class="login-container">
+    <div class="circle-image">
+      <img src="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" alt="Image">
+    </div>
+		
+		<form  id="login-form" method="post">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required> <br>
+			<input type="submit" value="Login">
+		</form>
+    <p id="error-message"></p>
+	</div>
+  <style>
+
+    .circle-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    
+    .circle-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+		body {
+			font-family: Arial, sans-serif;
+			background-image: url("https://wallpaperaccess.com/full/5622205.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			color: #fff;
+		  }
+		  
+		  .login-container {
+			background-color: rgba(0, 0, 0, 0.7);
+			border-radius: 10px;
+			padding: 20px;
+			margin: 50px auto;
+			max-width: 400px;
+			box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+			border: 1px solid #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+		  }
+		  
+		  img {
+			width: 40%;
+			display: block;
+			margin: 0 auto;
+			background-color: white;
+		  }
+		  
+		  h1 {
+			text-align: center;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 36px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		  }
+		  
+		  form {
+			display: flex;
+			flex-direction: column;
+		  }
+		  
+		  label {
+			margin-top: 10px;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 24px;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		  }
+		  
+		  input[type="text"],
+		  input[type="password"],
+		  input[type="submit"] {
+			padding: 10px;
+			margin-top: 5px;
+			border-radius: 5px;
+			border: none;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 18px;
+			color: #fff;
+			background-color: rgba(255, 255, 255, 0.2);
+		  }
+		  
+		  input[type="submit"] {
+			background-color: #f00;
+			color: #fff;
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+			border: 2px solid #fff;
+			border-radius: 5px;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 18px;
+		  }
+		  
+		  #error-message {
+			color: red;
+			font-family: 'Press Start 2P', cursive;
+			font-size: 18px;
+		  }
+		  
+	
+	#error-message {
+		color: #f00;
+	}
+	
+	@media only screen and (max-width: 600px) {
+		.login-container {
+			margin: 20px auto;
+			max-width: 90%;
+		}
+		img {
+			width: 60%;
+		}
+	}
+  #error-message {
+    color: red;
+  }
+  @media only screen and (max-width: 600px) {
+    .login-container {
+      margin: 20px auto;
+      max-width: 90%;
+    }
+    img{
+      width: 60%;
+    }
+  }
+  </style>
+<script>
+
+	window.addEventListener("load", function() {
+		// Display the alert message
+		alert("Before you play the game, you need to sign in.\nPlease note that your data won't be saved. \n as server are not stared, \n hence you will need to signin everytime you open the app.");
+	  
+		// Redirect the user to the sign-in page
+
+	  });
+	  
+  const form = document.getElementById('login-form');
+	const errorMessage = document.getElementById('error-message');
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const username = form.username.value;
+		const password = form.password.value;
+
+		// TODO: Implement server-side authentication
+
+			if (username === 'Tejas@tservice.org' && password === 'tejas2620') {
+			window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(1).html';
+
+	  } 
+                else if (username === 'Abhijeet@tgames.com' && password === 'abhijeet31052006') 
+    {
+			window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(1).html';
+
+		}
+		 else if (username === 'Viddhesh@tservice.org' && password === 'sammu&viddhu') 
+    {
+			window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(1).html';
+		}
+		
+		else if (username === 'Himali@tarts.com' && password === 'Himali12675615') 
+		{
+				window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(1).html';
+
+		}
+		else if (username === 'Pravaratak@tgames.com' && password === 'Pravratak46273832') 
+		{
+				window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(1).html';
+
+		}
+                  else {
+			errorMessage.textContent = 'Incorrect username or password ';
+		}
+	});
+	</script>
+	
+
+    <p class="login-container" align="center">Terms and conditions<br> <br><br>
+
+    Not to share your account credential with anyone. <br><br> </p>
+
+ >
+    
+
+  <style>
+    b{
+      color:red;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    p{
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+  </style>
+  
+</body>
+</html>
