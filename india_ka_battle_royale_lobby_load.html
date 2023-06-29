@@ -570,6 +570,19 @@
             border: none;
             cursor: pointer;
           }
+/*mobile landscape strictly */
+@media screen and (orientation: portrait) {
+  body {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    display: block;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -611,6 +624,25 @@
 
 
         <script>
+window.addEventListener("orientationchange", function() {
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    var orientation = window.orientation;
+
+    switch(orientation) {
+      case 0:
+      case 180:
+        // Portrait orientation
+        alert("Please switch to landscape mode to continue");
+        break;
+      case 90:
+      case -90:
+        // Landscape orientation
+        break;
+    }
+  }
+});
 
             // body back_load
             // Wait for the page to load
@@ -855,5 +887,7 @@
                     }
                   }
             </script>
+
+
         </body>
     </html>
