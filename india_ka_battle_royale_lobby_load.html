@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
         button {
@@ -279,7 +280,7 @@
 
 
         BODY {
-            background-image: url("https://i.ibb.co/vxkg7qK/bw-1.png");
+            background-image: url("https://i.ibb.co/MCFGFGk/Untitled-design-2.png");
             background-repeat: no-repeat;
             background-size: 1400px 800px;
             background-attachment: fixed;
@@ -560,6 +561,15 @@
             overflow: hidden;
         }
 
+        #toggleButton {
+            position: fixed;
+            top: 3px;
+            right: 60px;
+            z-index: 9999;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
     </style>
 </head>
 <body>
@@ -613,7 +623,7 @@
 
                     // Restore scrollbar visibility
                     document.body.style.overflow = "auto";
-                }, 5000);
+                }, 1000);
             });
 
             function openStore() {
@@ -805,6 +815,14 @@
                     </div>
                 </button>
             </div>
+            <audio id="myAudio" autoplay>
+                <source src="https://teju0051.github.io/TGames/epic-dramatic-action-trailer-99525.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            
+              <button id="toggleButton" onclick="toggleAudio()">
+                <i id="icon" class="fas fa-volume-up"></i>
+              </button>
             <script>
  // Get the button element
   const button = document.querySelector('.start');
@@ -821,6 +839,21 @@
                 window.onload = function() {
                     alert("Servers are not started, following functions are disabled. (1) Name change (2) Start Battle (3) All function under more options, Character may be not visible as the extension pack is not sent to the server. For better gaming experience, play in fullscreen mode through 'Toggle Full-screen' option.");
                 };
+
+                function toggleAudio() {
+                    var audio = document.getElementById("myAudio");
+                    var icon = document.getElementById("icon");
+              
+                    if (audio.paused) {
+                      audio.play();
+                      icon.classList.remove("fa-volume-off");
+                      icon.classList.add("fa-volume-up");
+                    } else {
+                      audio.pause();
+                      icon.classList.remove("fa-volume-up");
+                      icon.classList.add("fa-volume-off");
+                    }
+                  }
             </script>
         </body>
     </html>
