@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title> T-Games | Bharatiya Warriors</title>
+    <title> T-Games | Bharatiya Warriors</title>
     <link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="x-image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -596,17 +596,58 @@
             <!--More Options button doesn't look good in games-->
 
             <div id="options">
-                <button onclick="openStore()" id="optionbtn">Store</button> <br>
-                <button onclick="openLuckRoyale()" id="optionbtn">Luck Royale</button> <br>
-                <button onclick="openWeapon()" id="optionbtn">Weapon</button> <br>
-                <button onclick="openCharacterPets()" id="optionbtn">Characters</button> <br>
-                <button onclick="openPets()" id="optionbtn">Pets</button> <br>
-                <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';" id="optionbtn">Exit The Game</button>
+                <button onclick="openStore()" id="optionbtn1">Store</button> <br>
+                <button onclick="openLuckRoyale()" id="optionbtn2">Luck Royale</button> <br>
+                <button onclick="openWeapon()" id="optionbtn3">Weapon</button> <br>
+                <button onclick="openCharacterPets()" id="optionbtn4">Characters</button> <br>
+                <button onclick="openPets()" id="optionbtn5">Pets</button> <br>
+                <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';">Exit The Game</button>
                 <br>
                 <button onclick="toggleFullScreen()" id="optionbtn">Toggle Full Screen</button>
 
-
+                <audio id="buttonSound1" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound2" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound3" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound4" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound5" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+         
+  
+                
                 <script>
+
+                    // Function to play the button sound
+function playButtonSound(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.play();
+  }
+  function playButtonSound(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.play();
+  }
+  
+  document.getElementById("optionbtn1").addEventListener("click", function() {
+    playButtonSound("buttonSound1");
+  });
+  
+  document.getElementById("optionbtn2").addEventListener("click", function() {
+    playButtonSound("buttonSound2");
+  });
+  
+  document.getElementById("optionbtn3").addEventListener("click", function() {
+    playButtonSound("buttonSound3");
+  });
+  
+  document.getElementById("optionbtn4").addEventListener("click", function() {
+    playButtonSound("buttonSound4");
+  });
+  
+  document.getElementById("optionbtn5").addEventListener("click", function() {
+    playButtonSound("buttonSound5");
+  });
+  
+  
+  // Add event listeners for the rest of the buttons, specifying the corresponding audio IDs
+  
 
                     function toggleFullScreen() {
                         var elem = document.documentElement;
