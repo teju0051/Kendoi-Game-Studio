@@ -34,83 +34,82 @@
             font-size: 13px;
             font-weight: bold;
             color: #87FFB4;
-          
+            text-align: center;
         }
-.start1{
-      /*This is for start button... Please check classes and Id(s) before editing*/
-      position: absolute;
-      bottom: 23%;
-      /*Please edit these only if you want*/
-      right: 
-      5%;
-      /*to change position of this button*/
-      width: 11em;
-      height: 4em;
-      outline: none;
-      transition: 0.1s;
-      background-color: transparent;
-      border: none;
-      font-size: 13px;
-      font-weight: bold;
-      color: #87FFB4;
-    
-}
-.start1:hover #leftTop {
-    animation: 0.1s ease-in-out 0.05s both changeColor8,
-    0.2s linear 0.4s both lightEffect8;
-}
+        .start1 {
+            /*This is for start button... Please check classes and Id(s) before editing*/
+            position: absolute;
+            bottom: 23%;
+            /*Please edit these only if you want*/
+            right: 5%;
+            /*to change position of this button*/
+            width: 11em;
+            height: 4em;
+            outline: none;
+            transition: 0.1s;
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: #87FFB4;
+            text-align: center;
+        }
+        .start1:hover #leftTop {
+            animation: 0.1s ease-in-out 0.05s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
 
-.start1:hover #rightTop {
-    animation: 0.1s ease-in-out 0.15s both changeColor8,
-    0.2s linear 0.4s both lightEffect8;
-}
+        .start1:hover #rightTop {
+            animation: 0.1s ease-in-out 0.15s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
 
-.start1:hover #rightBottom {
-    animation: 0.1s ease-in-out 0.25s both changeColor8,
-    0.2s linear 0.4s both lightEffect8;
-}
+        .start1:hover #rightBottom {
+            animation: 0.1s ease-in-out 0.25s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
 
-.start1:hover #leftBottom {
-    animation: 0.1s ease-in-out 0.35s both changeColor8,
-    0.2s linear 0.4s both lightEffect8;
-}
+        .start1:hover #leftBottom {
+            animation: 0.1s ease-in-out 0.35s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
 
-.start1:hover .corner {
-    transform: scale(1.25) rotate(45deg);
-}
+        .start1:hover .corner {
+            transform: scale(1.25) rotate(45deg);
+        }
 
-.start1:hover #startclip {
-    animation: 0.2s ease-in-out 0.55s both greenLight8;
-    --color: #27c39f;
-}
+        .start1:hover #startclip {
+            animation: 0.2s ease-in-out 0.55s both greenLight8;
+            --color: #27c39f;
+        }
 
 @keyframes changeColor8 {
-    from {
-        background-color: #2781c3;
-    }
+            from {
+                background-color: #2781c3;
+            }
 
-    to {
-        background-color: #27c39f;
-    }
-}
+            to {
+                background-color: #27c39f;
+            }
+        }
 
 @keyframes lightEffect8 {
-    from {
-        box-shadow: 1px 1px 5px #27c39f;
-    }
+            from {
+                box-shadow: 1px 1px 5px #27c39f;
+            }
 
-    to {
-        box-shadow: 0 0 2px #27c39f;
-    }
-}
+            to {
+                box-shadow: 0 0 2px #27c39f;
+            }
+        }
 
 @keyframes greenLight8 {
-    from {}
+            from {}
 
-    to {
-        box-shadow: inset 0px 0px 32px #27c39f;
-    }
-}
+            to {
+                box-shadow: inset 0px 0px 32px #27c39f;
+            }
+        }
         .cancel {
             position: absolute;
             top: -70px;
@@ -561,56 +560,6 @@
             overflow: hidden;
         }
 
-        .popup-container {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            z-index: 9999;
-          }
-          
-          .popup-container img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-          }
-          
-          .popup-container audio {
-            display: block;
-            margin-top: 10px;
-            width: 100%;
-          }
-          
-          /*Error_msg_*/
-          .popup-container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 9999;
-}
-
-.popup-container img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
-}
-
     </style>
 </head>
 <body>
@@ -633,11 +582,6 @@
 
 
                 <script>
-
-
-
-
-                    
 
                     function toggleFullScreen() {
                         var elem = document.documentElement;
@@ -669,7 +613,7 @@
 
                     // Restore scrollbar visibility
                     document.body.style.overflow = "auto";
-                }, 1000);
+                }, 5000);
             });
 
             function openStore() {
@@ -817,37 +761,10 @@
                     document.getElementById('bottomPart').style.height = '50%';
                 }
             </script>
-            
-            <button class="start" onclick="openTimer()"> Tap to start
-          
+  <button class="start1">Select Map 
 
-                <div id="startclip" class="color">
-                    <BR>
 
-                        <div id="leftTop" class="corner"></div>
-                        <div id="rightBottom" class="corner"></div>
-                        <div id="rightTop" class="corner"></div>
-                        <div id="leftBottom" class="corner"></div>
 
-                    </div>
-                </button>
-         
-                <button class="cancel" id="cancel" onclick="closeTimer()">
-                    TIMER❌
-                    <div id="case">
-                        <div id="topPart"></div>
-                        <div id="bottomPart"></div>
-                    </div>
-                </button>
-            </div>
-             <div id="popup" class="popup-container">
-                    <button class="close-button" onclick="hidePopup()">Close</button>
-                    <img id="popupImage" src="https://i.ibb.co/3cYhmyn/MAPS-WILL-BE-AVAILABLE-SOON-removebg-preview.png" alt="Popup Image">
-                  </div>
-            <button onclick="showPopup()"class="start1">Select Map 
-                
-
-               
 
                 <!-- this is for strat game sound -->
                 <audio id="audioPlayer">
@@ -856,7 +773,7 @@
                     <!-- Add additional <source> tags for different audio formats   ( BY PIXA BAY) -->
                   </audio>
 
-       
+
                 <div id="startclip" class="color">
                     <BR>
 
@@ -868,9 +785,28 @@
                     </div>
 
             </button>
-            
+            <button class="start" onclick="openTimer()"> START
+
+                <div id="startclip" class="color">
+                    <BR>
+
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
+
+                    </div>
+                </button>
+                <button class="cancel" id="cancel" onclick="closeTimer()">
+                    TIMER❌
+                    <div id="case">
+                        <div id="topPart"></div>
+                        <div id="bottomPart"></div>
+                    </div>
+                </button>
+            </div>
             <script>
-                 // Get the button element
+ // Get the button element
   const button = document.querySelector('.start');
 
   // Get the audio element
@@ -882,15 +818,9 @@
     audioPlayer.play();
   });
 
-  
                 window.onload = function() {
                     alert("Servers are not started, following functions are disabled. (1) Name change (2) Start Battle (3) All function under more options, Character may be not visible as the extension pack is not sent to the server. For better gaming experience, play in fullscreen mode through 'Toggle Full-screen' option.");
                 };
-
-            
-
             </script>
         </body>
     </html>
-
-
