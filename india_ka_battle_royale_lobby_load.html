@@ -1,519 +1,896 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
-      button {
-        position: relative;
-        width: 11em;
-        height: 4em;
-        outline: none;
-        transition: 0.1s;
-        background-color: transparent;
-        border: none;
-        font-size: 13px;
-        font-weight: bold;
-        color: #ddebf0;
-        transform: rotateX('23');
-        
-        
-      }
-      .bottom-right-button {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin: 20px; /* Adjust this value based on your needs */
-      }
-      
-    
-      .container {
-      
-        background-size:coVER;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-      }
+        button {
+            /*Please tell me what khichdi is this after your review*/
+            position: relative;
+            width: 11em;
+            height: 4em;
+            outline: none;
+            transition: 0.1s;
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: #ddebf0;
+            transform: rotateX('23');
 
-     
-      BODY{
-        background-image: url("https://i.ibb.co/vxkg7qK/bw-1.png");
-        background-repeat: no-repeat;
-        background-size: 1400px 800px;
-        background-attachment: fixed;
-        overflow: hidden;
-      }
-      #profile-section .profile-picture {
-        float: left;
-        vertical-align: top;
-        width: 80px; /* Adjust the width to your desired size */
-        height: 70px; /* Adjust the height to your desired size */
-        border-radius: 3px;
-       border: 3px solid grey;
-      }
-
-h3{
-  text-align: left;
-  color:aliceblue;
-}
-
-.name1{
-  float: left;
-  vertical-align: top;
-  width: 210px; /* Adjust the width to your desired size */
-  height: 70px; /* Adjust the height to your desired size */
-  border-radius: 3px;
- border: 3px solid grey;
-        
-}
-   
-    #container {
+        }
+        .start {
+            /*This is for start button... Please check classes and Id(s) before editing*/
+            position: absolute;
+            bottom: 10%;
+            /*Please edit these only if you want*/
+            right: 5%;
+            /*to change position of this button*/
+            width: 11em;
+            height: 4em;
+            outline: none;
+            transition: 0.1s;
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: #87FFB4;
+          
+        }
+.start1{
+      /*This is for start button... Please check classes and Id(s) before editing*/
       position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      padding: 20px;
-    }
-  
-    #options {
-      display: none;
-      margin-top: 10px;
-    }
-    #bioInput {
-      border: none; /* Remove the border */
-      background-color: gray; /* Set the background color to gray */
-      padding: 5px; /* Add some padding for better visibility */
-      color: white; /* Set the text color to white */
-      font-size: 14px; /* Adjust the font size as needed */
-    }
-  
-    #options button {
-      margin-bottom: 10px;
-      padding: 10px 20px;
-      background-color: rgba(41, 41, 41, 0.8);
-      background-color:
-      color: #fff;
-      font-size: 16px;
+      bottom: 23%;
+      /*Please edit these only if you want*/
+      right: 
+      5%;
+      /*to change position of this button*/
+      width: 11em;
+      height: 4em;
+      outline: none;
+      transition: 0.1s;
+      background-color: transparent;
       border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  
-    #options button:hover {
-      background-color: rgba(88, 88, 88, 0.8);
-    
-    }
-    #tap-button {
-      padding: 12px 24px;
-      background-color: #2196f3;
-      color: #fff;
-      font-size: 16px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease;
-    }
-  
-    #tap-button:hover {
-      background-color: #1976d2;
-    }
-
-    /*PROFILE POPUP VIEW */
-    .popup-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
-    
-    .popup-content {
-      position: relative;
-      max-width: 500px;
-      padding: 50px;
-      height: 450px;
-      border: 1px solid #ffffff;
-      background-color: #000000;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .popup-content::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      bottom: -10px;
-      left: -10px;
-      z-index: -1;
-      background-color: rgba(41, 41, 41, 0.8);
-      border-radius: 5px;
-    }
-    
-    .profile-container {
-      margin-bottom: 30px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .profile-header {
-      text-align: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .player-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 10px; /*button position aling*/
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .player-info img {
-      width: 160px;
-      height: 120px;
-      border-radius: 20px;
-      object-fit: cover;
-      border: 2px solid #ffffff;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .player-name {
-      margin-left: 140px;
-      color:white;
-      text-align: left;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    .player-bio input[type="text"] {
-      width: 300px; /* Adjust the width as needed */
-      color:white;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .player-name h2,
-    .player-name p {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .profile-stats {
-      margin-top: 20px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .stat {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
+      font-size: 13px;
       font-weight: bold;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #666;
-    }
+      color: #87FFB4;
     
-    .profile-progress {
-      margin-top: 20px;
-    }
-    
-    .progress-bar {
-      height: 20px;
-      background-color: #f2f2f2;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    
-    .progress-fill {
-      height: 100%;
-      background-color: #f3f3f3;
-      transition: width 0.13s ease-in-out;
-    }
-    
-    .progress-labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: -20px;
-    }
-    
-    .progress-labels .label {
-      font-size: 12px;
-      color: #999;
-    }
-    .player-bio {
-      margin-top: 20px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    
-    .player-bio textarea {
-      width: 100%;
-      padding: 5px;
-      margin-bottom: 10px;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.start1:hover #leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
 
-      
+.start1:hover #rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+.start1:hover #rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+.start1:hover #leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8,
+    0.2s linear 0.4s both lightEffect8;
+}
+
+.start1:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+}
+
+.start1:hover #startclip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #27c39f;
+}
+
+@keyframes changeColor8 {
+    from {
+        background-color: #2781c3;
     }
-    
-    .player-bio button {
-      padding: 15px 30px;
-      background-color: rgba(41, 41, 41, 0.8);
-   
-      color: #fff;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    to {
+        background-color: #27c39f;
     }
-    #loader {
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+}
+
+@keyframes lightEffect8 {
+    from {
+        box-shadow: 1px 1px 5px #27c39f;
     }
-    
-    #loader:after {
-      content: "";
-      border: 16px solid #f3f3f3;
-      border-radius: 50%;
-      border-top: 16px solid #3498db;
-      border-bottom: 16px solid #3498db;
-      width: 120px;
-      height: 120px;
-      animation: spin 1s linear infinite;
+
+    to {
+        box-shadow: 0 0 2px #27c39f;
     }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+}
+
+@keyframes greenLight8 {
+    from {}
+
+    to {
+        box-shadow: inset 0px 0px 32px #27c39f;
     }
-    
-    /* Hide scrollbar while loading */
-    body {
-      overflow: hidden;
-    }
-    
-  </style>
+}
+        .cancel {
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            width: 11em;
+            height: 5em;
+            outline: none;
+            transition: .1s;
+            background-color: transparent;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+            color: #FF0000;
+        }
+
+        /*This is timer cancel button. Change only basic properties.*/
+
+        #startclip {
+            --color: #2761c3;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            border: 5px double var(--color);
+            box-shadow: inset 0px 0px 15px #195480;
+            -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        #case {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            transition: .1s;
+        }
+
+        #topPart {
+            position: absolute;
+            top: 0;
+            height: 50%;
+            width: 100%;
+            background-color: #FFB900;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition-delay: .5s;
+            transition: .5s ease;
+        }
+        #bottomPart {
+            position: absolute;
+            bottom: 0;
+            height: 50%;
+            width: 100%;
+            background-color: #FFB900;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            transition-delay: .5s;
+            transition: .5s ease;
+        }
+
+        .arrow {
+            position: absolute;
+            transition: 0.2s;
+            background-color: #2761c3;
+            top: 35%;
+            width: 11%;
+            height: 30%;
+        }
+
+        .corner {
+            position: absolute;
+            width: 4em;
+            height: 4em;
+            background-color: #2761c3;
+            box-shadow: inset 1px 1px 8px #2781c3;
+            transform: scale(1) rotate(45deg);
+            transition: 0.2s;
+        }
+
+        #rightTop {
+            top: -1.98em;
+            left: 91%;
+        }
+
+        #leftTop {
+            top: -1.96em;
+            left: -3.0em;
+        }
+
+        #leftBottom {
+            top: 2.10em;
+            left: -2.15em;
+        }
+
+        #rightBottom {
+            top: 45%;
+            left: 88%;
+        }
+
+        .start:hover #leftTop {
+            animation: 0.1s ease-in-out 0.05s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
+
+        .start:hover #rightTop {
+            animation: 0.1s ease-in-out 0.15s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
+
+        .start:hover #rightBottom {
+            animation: 0.1s ease-in-out 0.25s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
+
+        .start:hover #leftBottom {
+            animation: 0.1s ease-in-out 0.35s both changeColor8,
+            0.2s linear 0.4s both lightEffect8;
+        }
+
+        .start:hover .corner {
+            transform: scale(1.25) rotate(45deg);
+        }
+
+        .start:hover #startclip {
+            animation: 0.2s ease-in-out 0.55s both greenLight8;
+            --color: #27c39f;
+        }
+
+@keyframes changeColor8 {
+            from {
+                background-color: #2781c3;
+            }
+
+            to {
+                background-color: #27c39f;
+            }
+        }
+
+@keyframes lightEffect8 {
+            from {
+                box-shadow: 1px 1px 5px #27c39f;
+            }
+
+            to {
+                box-shadow: 0 0 2px #27c39f;
+            }
+        }
+
+@keyframes greenLight8 {
+            from {}
+
+            to {
+                box-shadow: inset 0px 0px 32px #27c39f;
+            }
+        }
+
+        .container {
+
+            background-size: coVER;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        BODY {
+            background-image: url("https://i.ibb.co/vxkg7qK/bw-1.png");
+            background-repeat: no-repeat;
+            background-size: 1400px 800px;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        #profile-section .profile-picture {
+            float: left;
+            vertical-align: top;
+            width: 80px;
+            /* Adjust the width to your desired size */
+            height: 70px;
+            /* Adjust the height to your desired size */
+            border-radius: 3px;
+            border: 3px solid grey;
+        }
+
+        h3 {
+            text-align: left;
+            color: aliceblue;
+        }
+
+        .name1 {
+            float: left;
+            vertical-align: top;
+            width: 210px;
+            /* Adjust the width to your desired size */
+            height: 70px;
+            /* Adjust the height to your desired size */
+            border-radius: 3px;
+            border: 3px solid grey;
+
+        }
+
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            padding: 20px;
+        }
+
+        #options {
+            display: block;
+            margin-top: 10px;
+        }
+        #bioInput {
+            border: none;
+            /* Remove the border */
+            background-color: gray;
+            /* Set the background color to gray */
+            padding: 5px;
+            /* Add some padding for better visibility */
+            color: white;
+            /* Set the text color to white */
+            font-size: 14px;
+            /* Adjust the font size as needed */
+        }
+
+        #options button {
+            height: 42px;
+            width: 100px;
+            margin-bottom: 6px;
+            background-color: rgba(130, 10, 150, 0.8);
+            /*Set this color some shiny type... as you like OFCOURSE!*/
+         
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #options button:hover {
+            background-color: rgba(88, 88, 88, 0.8);
+
+        }
+        #tap-button {
+            padding: 12px 24px;
+            background-color: #2196f3;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        #tap-button:hover {
+            background-color: #1976d2;
+        }
+
+        /*PROFILE POPUP VIEW */
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .popup-content {
+            position: relative;
+            max-width: 500px;
+            padding: 50px;
+            height: 450px;
+            border: 1px solid #ffffff;
+            background-color: #000000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-content::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            z-index: -1;
+            background-color: rgba(41, 41, 41, 0.8);
+            border-radius: 5px;
+        }
+
+        .profile-container {
+            margin-bottom: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .profile-header {
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .player-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            /*button position aling*/
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .player-info img {
+            width: 160px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .player-name {
+            margin-left: 140px;
+            color: white;
+            text-align: left;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .player-bio input[type="text"] {
+            width: 300px;
+            /* Adjust the width as needed */
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .player-name h2,
+        .player-name p {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .profile-stats {
+            margin-top: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #666;
+        }
+
+        .profile-progress {
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #f3f3f3;
+            transition: width 0.13s ease-in-out;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -20px;
+        }
+
+        .progress-labels .label {
+            font-size: 12px;
+            color: #999;
+        }
+        .player-bio {
+            margin-top: 20px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .player-bio textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+        }
+
+        .player-bio button {
+            padding: 15px 30px;
+            background-color: rgba(41, 41, 41, 0.8);
+
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #loader {
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loader:after {
+            content: "";
+            border: 2px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 2px solid #FF0000;
+            border-bottom: 2px solid #001AFF;
+            border-left: 2px solid #FF0000;
+            border-right: 2px solid #001AFF;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+@keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide scrollbar while loading */
+        body {
+            overflow: hidden;
+        }
+
+        .popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+          }
+          
+          .popup-container img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+          }
+          
+          .popup-container audio {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+          }
+          
+          /*Error_msg_*/
+          .popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+}
+
+.popup-container img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+}
+
+    </style>
 </head>
 <body>
-  
-  <div id="loader"></div>
-  <div id="content" style="display: none;">
-  <div id="container">
-    <button  id="tap-button" onclick="showOptions()">More Options</button> <br>
- 
-  
-    <div id="options">
-      <button onclick="openStore()">Store</button> <br>
-      <button onclick="openLuckRoyale()">Luck Royale</button> <br>
-      <button onclick="openWeapon()">Weapon</button> <br>
-      <button onclick="openCharacterPets()">Characters</button> <br>
-      <button onclick="openPets()">Pets</button> <br>
-      <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';">Exit The Game</button>
-      <br>
-      <button onclick="toggleFullScreen()">Toggle Full Screen</button>
 
-  
-<script>
+    <div id="loader"></div>
+    <div id="content" style="display: none;">
+        <div id="container">
+            <!--<button id="tap-button" onclick="showOptions()">More Options</button> <br>-->
+            <!--More Options button doesn't look good in games-->
 
-  function toggleFullScreen() {
-    var elem = document.documentElement;
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen();
-    }
-  }
-</script>
-    </div>
-  </div>
-  
-  
-  <script>
-
-     // body back_load
-    // Wait for the page to load
-window.addEventListener("load", function() {
-  // Simulate a delay of 3 seconds
-  setTimeout(function() {
-    // Show the content and hide the loader
-    document.getElementById("content").style.display = "block";
-    document.getElementById("loader").style.display = "none";
-
-    // Restore scrollbar visibility
-    document.body.style.overflow = "auto";
-  }, 5000);
-});
-
-    var optionsVisible = false;
-  
-    function showOptions() {
-      var options = document.getElementById("options");
-      options.style.display = optionsVisible ? "none" : "block";
-      optionsVisible = !optionsVisible;
-    }
-    
-    function openStore() {
-      console.log("Opening Store...");
-      // Add your code to open the store
-      // For example, redirect to a store page or display store content
-    }
-    
-    function openLuckRoyale() {
-      console.log("Opening Luck Royale...");
-      // Add your code to open the Luck Royale
-      // For example, trigger a luck royale event or show luck royale options
-    }
-    
-    function openWeapon() {
-      console.log("Opening Weapon...");
-      // Add your code to open the Weapon section
-      // For example, display weapon selection or load weapon-related content
-    }
-    
-    function openCharacterPets() {
-      console.log("Opening Character Pets...");
-      // Add your code to open the Character Pets section
-      // For example, show available character pets or allow pet customization
-    }
+            <div id="options">
+                <button onclick="openStore()" id="optionbtn">Store</button> <br>
+                <button onclick="openLuckRoyale()" id="optionbtn">Luck Royale</button> <br>
+                <button onclick="openWeapon()" id="optionbtn">Weapon</button> <br>
+                <button onclick="openCharacterPets()" id="optionbtn">Characters</button> <br>
+                <button onclick="openPets()" id="optionbtn">Pets</button> <br>
+                <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';" id="optionbtn">Exit The Game</button>
+                <br>
+                <button onclick="toggleFullScreen()" id="optionbtn">Toggle Full Screen</button>
 
 
-    // leave game
-    function confirmExit() {
-      var confirmation = confirm("Are you sure you want to leave?");
-      if (confirmation) {
-        // Uncomment the line below to redirect to another page
-         window.location.href = "https://teju0051.github.io/TGames/Home.html";
-      }
-    }
-  
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        confirmExit();
-      }
-    });
-  </script>
-  
-    <div id="profile-section">
-      <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture" class="profile-picture" id="openProfileBtn" >
-      
-    </div>
-  
+                <script>
 
-    <div id="popupContainer" class="popup-container">
-      <div class="popup-content">
-        <div class="profile-container">
-          <div class="profile-header">
-            <div class="player-info">
-              <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture">
-           
-              <div class="player-name">
-            
-                  <h2 id="playerName">T-GAMES-TEST</h2>
-                  <p><b>UID:</b><i>1000001</i></p>
-              </div>
+
+
+
+                    
+
+                    function toggleFullScreen() {
+                        var elem = document.documentElement;
+                        if (elem.requestFullscreen) {
+                            elem.requestFullscreen();
+                        } else if (elem.mozRequestFullScreen) {
+                            elem.mozRequestFullScreen();
+                        } else if (elem.webkitRequestFullscreen) {
+                            elem.webkitRequestFullscreen();
+                        } else if (elem.msRequestFullscreen) {
+                            elem.msRequestFullscreen();
+                        }
+                    }
+                </script>
             </div>
-          </div>
-      
-         <hr>
-          <div class="profile-stats">
-            <div class="stat">
-              <span class="label">Wins</span>
-              <span class="value">00</span>
-            </div>
-            <div class="stat">
-              <span class="label">Kills</span>
-              <span class="value">00</span>
-            </div>
-            <div class="stat">
-              <span class="label">Headshots</span>
-              <span class="value">00</span>
-            </div>
-            <div class="stat">
-              <span class="label">Matches Played</span>
-              <span class="value">00</span>
-            </div>
-          </div>
-          <div class="profile-progress">
-            <h3>Experience</h3>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 70%;" 30xp></div>
-            </div>
-       
-            <div class="progress-labels">
-              <span class="label">Level 1</span>
-              <span class="label">Level 2</span>
-            </div>
-          
-            <div class="player-bio">
-              <input type="text" id="bioInput" maxlength="23" placeholder="Enter your bio">
-              <br><br><br>
-              <button id="bioSubmitBtn">Save</button>
-              <button id="bioCloseBtn">Close</button> 
-          </div>
         </div>
-      </div>
-    </div>
-  
-    
-    <script>
-  
-    
-  
-  //POPUP 
-  
-  document.getElementById('openProfileBtn').addEventListener('click', function() {
-      document.getElementById('popupContainer').style.display = 'flex';
-    });
-    
-  
-        //BIO
-        document.getElementById('bioSubmitBtn').addEventListener('click', function() {
-          var bioInput = document.getElementById('bioInput');
-          var bioText = bioInput.value.trim().substring(0, 23); // Truncate to maximum 30 characters
-          // Perform your desired action with the bio text
-          console.log('Bio:', bioText);
-        });
-  
-        document.getElementById('bioCloseBtn').addEventListener('click', function() {
-          document.getElementById('popupContainer').style.display = 'none';
-        });
+
+
+        <script>
+
+            // body back_load
+            // Wait for the page to load
+            window.addEventListener("load", function() {
+                // Simulate a delay of only 3 seconds PLEASE!
+                setTimeout(function() {
+                    // Show the content and hide the loader
+                    document.getElementById("content").style.display = "block";
+                    document.getElementById("loader").style.display = "none";
+
+                    // Restore scrollbar visibility
+                    document.body.style.overflow = "auto";
+                }, 1000);
+            });
+
+            function openStore() {
+                console.log("Opening Store...");
+                // Add your code to open the store
+                // For example, redirect to a store page or display store content
+            }
+
+            function openLuckRoyale() {
+                console.log("Opening Luck Royale...");
+                // Add your code to open the Luck Royale
+                // For example, trigger a luck royale event or show luck royale options
+            }
+
+            function openWeapon() {
+                console.log("Opening Weapons section...");
+                // Add your code to open the Weapons section
+                // For example, display weapon selection or load weapon-related content
+            }
+
+            function openCharacterPets() {
+                console.log("Opening Pets section...");
+                // Add your code to open the Character Pets section
+                // For example, show available character pets or allow pet customization
+            }
+
+
+            // leave game
+            function confirmExit() {
+                var confirmation = confirm("Are you sure you want to leave?");
+                if (confirmation) {
+                    // Uncomment the line below to redirect to another page
+                    window.location.href = "https://teju0051.github.io/TGames/Home.html";
+                }
+            }
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    confirmExit();
+                }
+            });
+        </script>
+
+        <div id="profile-section">
+            <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture" class="profile-picture" id="openProfileBtn">
+
+        </div>
+
+
+        <div id="popupContainer" class="popup-container">
+            <div class="popup-content">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="player-info">
+                            <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture">
+
+                            <div class="player-name">
+
+                                <h2 id="playerName">T-GAMES-TEST</h2>
+                                <p>
+                                    <b>UID:</b><i>000001</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="label">Wins</span>
+                            <span class="value">100</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Kills</span>
+                            <span class="value">100</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Headshots</span>
+                            <span class="value">100</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Matches Played</span>
+                            <span class="value">100</span>
+                        </div>
+                    </div>
+                    <div class="profile-progress">
+                        <h3>Experience</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;" 30xp></div>
+                        </div>
+
+                        <div class="progress-labels">
+                            <span class="label">Level 1</span>
+                            <span class="label">Level 2</span>
+                        </div>
+
+                        <div class="player-bio">
+                            <input type="text" id="bioInput" maxlength="30" placeholder="Enter your bio">
+                            <br><br><br>
+                            <button id="bioSubmitBtn">Save</button>
+                            <button id="bioCloseBtn">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+
+
+
+                //POPUP
+
+                document.getElementById('openProfileBtn').addEventListener('click', function() {
+                    document.getElementById('popupContainer').style.display = 'flex';
+                });
+
+
+                //BIO
+                document.getElementById('bioSubmitBtn').addEventListener('click', function() {
+                    var bioInput = document.getElementById('bioInput');
+                    var bioText = bioInput.value.trim().substring(0, 30); // Truncate to maximum 30 characters
+                    // Perform your desired action with the bio text
+                    console.log('Bio:', bioText);
+                });
+
+                document.getElementById('bioCloseBtn').addEventListener('click', function() {
+                    document.getElementById('popupContainer').style.display = 'none';
+                });
+
+            </script>
+        </div>
+        <div>
+            <script type="text/javascript" charset="utf-8">
+                function openTimer() {
+                    document.getElementById('cancel').style.top = '0';
+                    document.getElementById('topPart').style.transition = '.9s ease';
+                    document.getElementById('topPart').style.height = '38%';
+                    document.getElementById('bottomPart').style.transition = '.9s ease';
+                    document.getElementById('bottomPart').style.height = '38%';
+                }
+                function closeTimer() {
+                    document.getElementById('cancel').style.top = '-70px';
+                    document.getElementById('topPart').style.height = '50%';
+                    document.getElementById('bottomPart').style.height = '50%';
+                }
+            </script>
+            
+            <button class="start" onclick="openTimer()"> Tap to start
+          
+
+                <div id="startclip" class="color">
+                    <BR>
+
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
+
+                    </div>
+                </button>
+         
+                <button class="cancel" id="cancel" onclick="closeTimer()">
+                    TIMER❌
+                    <div id="case">
+                        <div id="topPart"></div>
+                        <div id="bottomPart"></div>
+                    </div>
+                </button>
+            </div>
+             <div id="popup" class="popup-container">
+                    <button class="close-button" onclick="hidePopup()">Close</button>
+                    <img id="popupImage" src="https://i.ibb.co/3cYhmyn/MAPS-WILL-BE-AVAILABLE-SOON-removebg-preview.png" alt="Popup Image">
+                  </div>
+            <button onclick="showPopup()"class="start1">Select Map 
+                
+
+               
+
+                <!-- this is for strat game sound -->
+                <audio id="audioPlayer">
+                    <source src="https://teju0051.github.io/TGames/game-start-6104.mp3" type="audio/mp3">
+                    <source src="https://teju0051.github.io/TGames/game-start-6104.mp3" type="audio/mp3">
+                    <!-- Add additional <source> tags for different audio formats   ( BY PIXA BAY) -->
+                  </audio>
+
        
-      </script>
-</div>
-    <div>
- 
+                <div id="startclip" class="color">
+                    <BR>
 
-    <button class="bottom-right-button">
-        
-      <div id="clip" class="color">
-     <BR>
-      
-      <div id="leftTop" class="corner"></div>
-      <div id="rightBottom" class="corner"></div>
-      <div id="rightTop" class="corner"></div>
-      <div id="leftBottom" class="corner"></div>
-  
-      </div>
+                        <div id="leftTop" class="corner"></div>
+                        <div id="rightBottom" class="corner"></div>
+                        <div id="rightTop" class="corner"></div>
+                        <div id="leftBottom" class="corner"></div>
 
-      <span id="rightArrow" class="arrow"></span>
-      <span id="leftArrow" class="arrow"></span>
+                    </div>
+
+            </button>
+            
+            <script>
+                 // Get the button element
+  const button = document.querySelector('.start');
+
+  // Get the audio element
+  const audioPlayer = document.getElementById('audioPlayer');
+
+  // Add click event listener to the button
+  button.addEventListener('click', function() {
+    // Play the audio
+    audioPlayer.play();
+  });
+
   
-   
-    </div>
-   <script>window.onload = function() {
-    alert("Servers are not started following functions are disabled. (1) Name change (2) Start Battle (3) All function under more options, Character may be not visible as the extension pack is not send to the server.For better gaming experience enable Toggle fullscreen available in more option section.");
-  };</script>
-  </body>
-</html>
+                window.onload = function() {
+                    alert("Servers are not started, following functions are disabled. (1) Name change (2) Start Battle (3) All function under more options, Character may be not visible as the extension pack is not sent to the server. For better gaming experience, play in fullscreen mode through 'Toggle Full-screen' option.");
+                };
+
+            
+
+            </script>
+        </body>
+    </html>
+
+
