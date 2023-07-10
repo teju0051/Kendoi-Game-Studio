@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title> T-Games | Bharatiya Warriors</title>
+    <link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="x-image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-***" crossorigin="anonymous" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-
-        
-        
-
         button {
-            @media only screen and (max-width: 480px)
             /*Please tell me what khichdi is this after your review*/
             position: relative;
             width: 11em;
@@ -27,10 +23,9 @@
 
         }
         .start {
-            
             /*This is for start button... Please check classes and Id(s) before editing*/
             position: absolute;
-            bottom: 5%;
+            bottom: 10%;
             /*Please edit these only if you want*/
             right: 5%;
             /*to change position of this button*/
@@ -40,7 +35,7 @@
             transition: 0.1s;
             background-color: transparent;
             border: none;
-            font-size: 9px;
+            font-size: 13px;
             font-weight: bold;
             color: #87FFB4;
             text-align: center;
@@ -58,7 +53,7 @@
             transition: 0.1s;
             background-color: transparent;
             border: none;
-            font-size: 9px;
+            font-size: 13px;
             font-weight: bold;
             color: #87FFB4;
             text-align: center;
@@ -141,8 +136,9 @@
             position: absolute;
             top: 0;
             overflow: hidden;
-            width: 100%;
-            height: 100%;
+            width: 70%;
+            height: 70%;
+            font-size: medium;
             border: 5px double var(--color);
             box-shadow: inset 0px 0px 15px #195480;
             -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
@@ -159,7 +155,7 @@
         #topPart {
             position: absolute;
             top: 0;
-            height: 50px;
+            height: 50%;
             width: 100%;
             background-color: #FFB900;
             border-top-left-radius: 15px;
@@ -287,19 +283,20 @@
         }
 
 
-        BODY {
-            background-image: url("");
-            background-repeat: no-repeat;
-            background-size: 1400px 800px;
-            background-attachment: fixed;
-            overflow: hidden;
-   
-            zoom: 1.75;
-        }
+       BODY {
+    background-image: url("https://i.ibb.co/dGT5rJv/wepik-export-20230710121413-Gb-YZ.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    overflow: hidden;
+    background-size: 911px 450px;
+    /*lhs for R1 adjust and rhs for C2 */
+}
+
         #profile-section .profile-picture {
             float: left;
             vertical-align: top;
-            width: 70px;
+            width: -90px;
             /* Adjust the width to your desired size */
             height: 50px;
             /* Adjust the height to your desired size */
@@ -315,9 +312,9 @@
         .name1 {
             float: left;
             vertical-align: top;
-            width: 10px;
+            width: 20px;
             /* Adjust the width to your desired size */
-            height: 10px;
+            height: 70px;
             /* Adjust the height to your desired size */
             border-radius: 3px;
             border: 3px solid grey;
@@ -339,18 +336,22 @@
         #bioInput {
             border: none;
             /* Remove the border */
-            background-color: gray;
+            background-color: white;
             /* Set the background color to gray */
-            padding: 5px;
+            padding: 15px;
+            width:215px;
+            height:20px;
             /* Add some padding for better visibility */
-            color: white;
+            color:#999;
             /* Set the text color to white */
             font-size: 9px;
             /* Adjust the font size as needed */
         }
 
         #options button {
-            height: 42px;
+
+            padding:10%;
+            height: 45px;
             width: 100px;
             margin-bottom: 6px;
             background-color: rgba(130, 10, 150, 0.8);
@@ -395,10 +396,10 @@
             align-items: center;
             backdrop-filter: blur(8px);
         }
-
+/*the pop-up with bg_black where profiel is shown edit here of the popup*/
         .popup-content {
             position: relative;
-            max-width: 360px;
+            max-width: 250px;
             padding: 50px;
             height: 260px;
             border: 1px solid #ffffff;
@@ -421,12 +422,10 @@
         .profile-container {
             margin-bottom: 30px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 9px;
         }
 
         .profile-header {
             text-align: center;
-            font-size: 9px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -434,16 +433,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             /*button position aling*/
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 9px;
         }
-
+ /*popup img when viewving profile that img is here */
         .player-info img {
-            width: 70px;
-            height: 70px;
-            border-radius: 2px;
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+
             object-fit: cover;
             border: 2px solid #ffffff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -451,30 +450,28 @@
         }
 
         .player-name {
-            margin-left: 140px;
-            font-size: 9px;
+            margin-left: 10px;
+            font-size: small;
             color: white;
             text-align: left;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .player-bio input[type="text"] {
-            width: 100px;
+            width: 50px;
             /* Adjust the width as needed */
             color: white;
-            font-size: 9px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .player-name h2,
         .player-name p {
             margin: 0;
-        
+            font-size: small;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .profile-stats {
             margin-top: 20px;
-            font-size: 9px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
@@ -487,17 +484,42 @@
             color: #666;
         }
 
-       
+        .profile-progress {
+            margin-top: 20px;
+            font-size: small;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #f3f3f3;
+            transition: width 0.13s ease-in-out;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -20px;
+        }
+
+        .progress-labels .label {
+            font-size: 12px;
+            color: #999;
+        }
         .player-bio {
             margin-top: 20px;
-            font-size: 9px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .player-bio textarea {
-            width: 100%;
-            padding: 5px;
-            font-size: 9px;
+            width:40%;
+            padding: 58px 399px;
             margin-bottom: 10px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -505,9 +527,9 @@
         }
 
         .player-bio button {
-            padding: 15px 30px;
+            padding: -25px 3px;
             background-color: rgba(41, 41, 41, 0.8);
-            font-size: 9px;
+
             color: #fff;
             border: none;
             border-radius: 15px;
@@ -563,6 +585,31 @@
             border: none;
             cursor: pointer;
           }
+/*mobile landscape strictly */
+@media screen and (orientation: portrait) {
+  body {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+    /* Adjust the styles for smaller screens */
+    /* Example styles, modify as needed */
+    .start {
+        bottom: 5%;
+        right: 5%;
+    }
+    .start1 {
+        bottom: 17%;
+        right: 5%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -570,17 +617,63 @@
     <div id="loader"></div>
     <div id="content" style="display: none;">
         <div id="container">
-      
-
+            <!--<button id="tap-button" onclick="showOptions()">More Options</button> <br>-->
+            <!--More Options button doesn't look good in games-->
 
             <div id="options">
-           
-                <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';" id="optionbtn">Exit The Game</button>
-                <br>
-                <button onclick="toggleFullScreen()" id="optionbtn">Toggle Full Screen</button>
+                <br><br>    <br><br>
+                <button onclick="openStore()" id="optionbtn1" class="battle-royale-button">Store</button> <br>
 
+                <button onclick="openWeapon()" id="optionbtn3" class="battle-royale-button">Weapon</button> <br>
+                <button onclick="openCharacterPets()" id="optionbtn4" class="battle-royale-button">VAULT</button> <br>
+                <button onclick="openPets()" id="optionbtn5" class="battle-royale-button">Pets</button> <br>
+                <button onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';" class="battle-royale-button">Exit</button>
+              
+     
 
+                <audio id="buttonSound1" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound2" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound3" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound4" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+                <audio id="buttonSound5" src="https://teju0051.github.io/TGames/stingers-001-6294.mp3"></audio>
+         
+  
+                
                 <script>
+
+                    // Function to play the button sound
+function playButtonSound(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.play();
+  }
+  function playButtonSound(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.play();
+  }
+  
+  document.getElementById("optionbtn1").addEventListener("click", function() {
+    playButtonSound("buttonSound1");
+  });
+  
+  document.getElementById("optionbtn2").addEventListener("click", function() {
+    playButtonSound("buttonSound2");
+  });
+  
+  document.getElementById("optionbtn3").addEventListener("click", function() {
+    playButtonSound("buttonSound3");
+  });
+  
+  document.getElementById("optionbtn4").addEventListener("click", function() {
+    playButtonSound("buttonSound4");
+  });
+  
+  document.getElementById("optionbtn5").addEventListener("click", function() {
+    playButtonSound("buttonSound5");
+  });
+  
+  
+  // Add event listeners for the rest of the buttons, specifying the corresponding audio IDs
+  
 
                     function toggleFullScreen() {
                         var elem = document.documentElement;
@@ -600,6 +693,25 @@
 
 
         <script>
+window.addEventListener("orientationchange", function() {
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    var orientation = window.orientation;
+
+    switch(orientation) {
+      case 0:
+      case 180:
+        // Portrait orientation
+        alert("Please switch to landscape mode to continue");
+        break;
+      case 90:
+      case -90:
+        // Landscape orientation
+        break;
+    }
+  }
+});
 
             // body back_load
             // Wait for the page to load
@@ -667,13 +779,14 @@
                 <div class="profile-container">
                     <div class="profile-header">
                         <div class="player-info">
-                            <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture">
+                            <img src="https://i.ibb.co/6NhmGKp/test-png-q-40.png" alt="Profile Picture"> 
 
                             <div class="player-name">
 
                                 <h2 id="playerName">T-GAMES-TEST</h2>
                                 <p>
-                                    <b>UID:</b><i>000001</i>
+                                    <b>UID:</b><i>000001</i> <br>
+                                    <b>lvl:</b><i>01</i>
                                 </p>
                             </div>
                         </div>
@@ -681,31 +794,58 @@
 
                     <hr>
                     <div class="profile-stats">
-                        <div class="stat">
-                            <span class="label">Most Kills</span>
-                            <span class="value">13</span>
-                        </div>
-                     
-                        <div class="stat">
-                            <span class="label">Matches Played</span>
-                            <span class="value">10</span>
-                        </div>
+                
                     </div>
-                        <div class="progress-labels">
-                            <span class="label">Level 1</span>
-                            <span class="label">Level 2</span>
+                    <div class="profile-progress">
+                        <h3>Experience</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%;" 30xp></div>
                         </div>
 
                         <div class="player-bio">
-                            <input type="text" id="bioInput" maxlength="30" placeholder="Enter your bio">
+                            <input type="text" id="bioInput" maxlength="30" placeholder="I LOVE BHARATIYA WARRIOR">
                             <br><br><br>
-                            <button id="bioSubmitBtn">Save</button>
-                            <button id="bioCloseBtn">Close</button>
+                            <button class="battle-royale-button" id="bioSubmitBtn">Save</button>
+                            <button class="battle-royale-button" id="bioCloseBtn">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
 
+        
+<style>.battle-royale-button {
+  background-color: #4caf50;
+  border: none;
+  color: #fff;
+  padding: 15px 15px;
+  font-size: 11px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.battle-royale-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: skewX(-30deg);
+  transition: left 0.3s;
+}
+
+.battle-royale-button:hover {
+  background-color: #3d8d41;
+}
+
+.battle-royale-button:hover:before {
+  left: 0;
+}
+</style>
 
             <script>
 
@@ -771,7 +911,7 @@
                     </div>
 
             </button>
-            <button class="start" onclick="openTimer()"> START
+            <button class="start" onclick="openTimer()"> begin
 
                 <div id="startclip" class="color">
                     <BR>
@@ -812,10 +952,7 @@
     audioPlayer.play();
   });
 
-                window.onload = function() {
-                    alert("Servers are not started, following functions are disabled. (1) Name change (2) Start Battle (3) All function under more options, Character may be not visible as the extension pack is not sent to the server. For better gaming experience, play in fullscreen mode through 'Toggle Full-screen' option.");
-                };
-
+            
                 function toggleAudio() {
                     var audio = document.getElementById("myAudio");
                     var icon = document.getElementById("icon");
@@ -831,5 +968,7 @@
                     }
                   }
             </script>
+
+
         </body>
     </html>
