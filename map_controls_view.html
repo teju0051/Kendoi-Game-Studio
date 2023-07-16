@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css" media="all">
+        body {
+            background-image: url('https://tlauncher.org/images/2020-08-29-17-1.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        @media (max-width: 600px) {
+          .player_name {
+            max-width: 100%; /* Full width for mobile screens */
+            padding: 10px;
+          }
+        }
+        /* Joystick Button Styles */
+        .button-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 100px auto;
+            border-radius: 50%;
+            border: 5px solid #535353;
+            background-color: transparent;
+            cursor: pointer;
+            overflow: hidden;
+            transform: translate(320%, 220%);
+        }
+        .outer-border {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 2px solid #535353;
+            pointer-events: none;
+        }
+        .button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100px;
+            width: 100px;
+            background-color: transparent;
+            border-radius: 50%;
+            transition: .2s ease;
+            pointer-events: none;
+        }
+        .stick {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 40px;
+            width: 40px;
+            background-color: #E8B600;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Shooting Button Styles */
+        .button1 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 200px;
+            width: 200px;
+            border: 5px solid #535353;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: .2s ease;
+            cursor: pointer;
+        }
+        .shell1 {
+            position: absolute;
+            top: 75px;
+            left: 20px;
+            height: 40px;
+            width: 150px;
+            border: none;
+            transform: rotate(45deg);
+        }
+        #bullet1 {
+            position: absolute;
+            left: 0px;
+            border: 1px solid #000000;
+            height: 100%;
+            width: 140px;
+            background-color: #E8B600;
+            border-top-left-radius: 100%;
+            border-bottom-left-radius: 100%;
+        }
+        #cartridge1 {
+            position: absolute;
+            right: 0px;
+            border: 1px solid #000000;
+            height: 100%;
+            width: 10px;
+            background-color: #B0B0B0;
+        }
+        .player_name {
+         justify-content: center;
+         text-align: center;
+   
+        }
+        
+        .player-button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        #player1 {
+          background-color: #FF5733;
+        }
+        
+        #player2 {
+          background-color: #33FFB2;
+        }
+        
+        #player3 {
+          background-color: #3363FF;
+        }
+        
+        #player4 {
+          background-color: #FF33A1;
+        }
+        
+    </style>
+</head>
+<body>
+
+  <div class="player_name">
+    <button class="player-button" id="player1">Sonu</button>
+    <button class="player-button" id="player2">Chinki</button>
+    <button class="player-button" id="player3">Chacha</button>
+    <button class="player-button" id="player4">Mr.Boom</button>
+  </div>
+  
+    <!-- Joystick Button -->
+    <div class="button-container" id="joystickContainer">
+        <div class="outer-border"></div>
+        <div class="button" id="joystickButton">
+            <div class="stick" id="joystickStick"></div>
+        </div>
+    </div>
+
+    <!-- Shooting Button -->
+    <div class="button1" id="shootingButton">
+        <div class="shell1" id="shell1">
+            <div id="bullet1"></div>
+            <div id="cartridge1"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+        var joystickContainer = document.getElementById("joystickContainer");
+        var joystickButton = document.getElementById("joystickButton");
+        var joystickStick = document.getElementById("joystickStick");
+        var shootingButton = document.getElementById("shootingButton");
+        var shell1 = document.getElementById("shell1");
+        var bullet1 = document.getElementById("bullet1");
+        var cartridge1 = document.getElementById("cartridge1");
+        var isJoystickActive = false;
+
+        // Function to calculate the angle and distance from the joystick's center
+        function getJoystickData(event) {
+            var rect = joystickContainer.getBoundingClientRect();
+            var centerX = rect.left + rect.width / 2;
+            var centerY = rect.top + rect.height / 2;
+            var mouseX = event.clientX || event.touches[0].clientX;
+            var mouseY = event.clientY || event.touches[0].clientY;
+
+            var deltaX = mouseX - centerX;
+            var deltaY = mouseY - centerY;
+
+            var angle = Math.atan2(deltaY, deltaX);
+            var distance = Math.min(Math.hypot(deltaX, deltaY), rect.width / 2);
+
+            return { angle, distance };
+        }
+
+        // Function to update joystick position based on user input
+        function updateJoystick(event) {
+            if (isJoystickActive) {
+                var { angle, distance } = getJoystickData(event);
+                var stickX = distance * Math.cos(angle);
+                var stickY = distance * Math.sin(angle);
+
+                joystickStick.style.transform = `translate(${stickX}px, ${stickY}px)`;
+            }
+        }
+
+        // Event listeners for joystick touch/mouse interactions
+        joystickContainer.addEventListener("mousedown", function(event) {
+            isJoystickActive = true;
+            joystickButton.style.transition = "none";
+            joystickStick.style.transition = "none";
+            updateJoystick(event);
+        });
+
+        document.addEventListener("mousemove", function(event) {
+            updateJoystick(event);
+        });
+
+        document.addEventListener("mouseup", function() {
+            isJoystickActive = false;
+            joystickButton.style.transition = ".2s ease";
+            joystickStick.style.transition = ".2s ease";
+            joystickStick.style.transform = "translate(-50%, -50%)";
+        });
+
+        joystickContainer.addEventListener("touchstart", function(event) {
+            isJoystickActive = true;
+            joystickButton.style.transition = "none";
+            joystickStick.style.transition = "none";
+            updateJoystick(event);
+        });
+
+        document.addEventListener("touchmove", function(event) {
+            updateJoystick(event);
+        });
+
+        document.addEventListener("touchend", function() {
+            isJoystickActive = false;
+            joystickButton.style.transition = ".2s ease";
+            joystickStick.style.transition = ".2s ease";
+            joystickStick.style.transform = "translate(-50%, -50%)";
+        });
+
+        // Event listeners for shooting button interactions
+        shootingButton.addEventListener("mousedown", function() {
+            shootingButton.style.transition = ".2s ease";
+            shootingButton.style.height = "210px";
+            shootingButton.style.width = "210px";
+            shootingButton.style.top = "95px";
+            shootingButton.style.left = "95px";
+
+            shell1.style.transition = ".2s ease";
+            shell1.style.height = "50px";
+            shell1.style.width = "160px";
+            shell1.style.top = "70px";
+            shell1.style.left = "15px";
+
+            bullet1.style.transition = ".2s ease";
+            bullet1.style.width = "145px";
+
+            cartridge1.style.transition = ".2s ease";
+            cartridge1.style.width = "15px";
+        });
+
+        shootingButton.addEventListener("mouseup", function() {
+            shootingButton.style.transition = ".2s ease";
+            shootingButton.style.height = "200px";
+            shootingButton.style.width = "200px";
+            shootingButton.style.top = "100px";
+            shootingButton.style.left = "100px";
+
+            shell1.style.transition = ".2s ease";
+            shell1.style.height = "40px";
+            shell1.style.width = "150px";
+            shell1.style.top = "75px";
+            shell1.style.left = "20px";
+
+            bullet1.style.transition = ".2s ease";
+            bullet1.style.width = "140px";
+
+            cartridge1.style.transition = ".2s ease";
+            cartridge1.style.width = "10px";
+        });
+    </script>
+</body>
+</html>
