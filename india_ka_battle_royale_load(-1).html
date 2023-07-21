@@ -3,6 +3,7 @@
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" href="https://www.linkpicture.com/q/newlogo_5.png" type="image">
 <title> T-Games </title>
 </head>
@@ -20,8 +21,16 @@
             border: 1px solid #dcdcdc;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             z-index: 9999;
+  max-width: 90%; /* Limit the maximum width of the popup */
+      width: 300px; 
+		
             
         }
+ @media (max-width: 768px) {
+      /* Adjust styles for screens with a width of 768px or less (common for mobile devices) */
+      .popup {
+        width: 90%; /* Make the popup full-width on smaller screens */
+      }
         .circle-image {
             width: 200px;
             height: 200px;
