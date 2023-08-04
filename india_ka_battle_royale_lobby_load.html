@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="wardrobestyle.css" type="text/css" media="all" />
     <link rel="stylesheet" href="luckroyalstyle.css" type="text/css" media="all" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport"
@@ -11,20 +10,23 @@
             margin: 0;
             padding: 0;
             background-image: url('https://i.ibb.co/WHC6rS5/Background.jpg');
-            background-size: 102% 102%;
             background-repeat: no-repeat;
             overflow: hidden;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             z-index: 0;
         }
-        #canvas {
-            position: absolute;
-            top: 10%;
-            left: 30%;
-            height: 90%;
-            width: 40%;
-            border: none;
-            background-color: transparent;
+        /* Media Query for landscape mode */
+@media screen and (orientation: landscape) {
+            body {
+                background-size: 100% auto;
+            }
+        }
+        /* Media Query for mobile devices */
+@media screen and (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+            }
         }
         .start {
             position: absolute;
@@ -102,6 +104,11 @@
             border-top-right-radius: 15px;
             transition-delay: .5s;
             transition: .5s ease;
+        }
+        #topPartclose b {
+            position: absolute;
+            right: 4.5px;
+            top: 2.5px;
         }
         #bottomPartclose {
             position: absolute;
@@ -360,6 +367,193 @@
         }
         .favpet-sec > header {
             border-right: 1px solid White;
+        }
+        /* Wardrobe CSS starts here 👇 */
+        .wardrobe {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0px;
+            height: 99%;
+            width: 100%;
+            background-color: Black;
+            /*Replace this with some good dark mode background-image: LoL;*/
+            border: 2px solid #1F1F1F;
+            transition: all .5s ease;
+            z-index: 2;
+        }
+        .wardrobeHead {
+            height: 23px;
+            width: 99%;
+            border-bottom: 1px solid Gray;
+            background-color: White;
+            text-align: center;
+            color: #FFB500;
+            padding: 5px;
+        }
+        #wardrobeClose {
+            position: absolute;
+            right: 5px;
+            border: none;
+            background-color: transparent;
+        }
+        /*leftpanel navigations here*/
+        .leftpanel {
+            position: absolute;
+            top: 70px;
+            left: -100px;
+            height: 71%;
+            width: 11%;
+            border: 3px solid #1F1F1F;
+            background-color: transparent;
+            transition: all .5s ease;
+        }
+        #leftButton {
+            height: 45px;
+            width: 100%;
+            color: #FFB500;
+            background-color: transparent;
+            border: 1px solid Grey;
+        }
+        #check {
+            display: none;
+        }
+        label #leftpaneltoggle {
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: -1px;
+            height: 30px;
+            width: 20px;
+            color: White;
+            background-color: #1F1F1F;
+            border-radius: 5px;
+            border: none;
+            transition: all .5s ease;
+        }
+        #check:checked ~ label #leftpaneltoggle {
+            left: 95px;
+            transform: rotate(180deg);
+        }
+        #check:checked ~ .leftpanel {
+            left: 0px;
+        }
+        /*Wardrobe contents here*/
+        .contents {
+            position: absolute;
+            top: 15%;
+            left: 122px;
+            height: 286px;
+            width: 470px;
+            padding: 10px;
+            border: none;
+            /*Make this border none after everything is done and working.*/
+            overscroll-behavior-y: contain;
+            overflow-y: scroll;
+        }
+        .product {
+            position: absolute;
+            height: 170px;
+            width: 150px;
+            background-color: Orange;
+            border: 1px solid Orange;
+            overflow: auto;
+        }
+        .product footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid Black;
+            background-color: Gray;
+        }
+        #product1 {
+            left: 0px;
+        }
+        #product2 {
+            left: 160px;
+        }
+        #product3 {
+            left: 320px;
+        }
+        .group1 {
+            position: absolute;
+            top: 10px;
+        }
+        .group2 {
+            position: absolute;
+            top: 190px;
+        }
+        .group3 {
+            position: absolute;
+            top: 370px;
+        }
+        .group4 {
+            position: absolute;
+            top: 550px;
+        }
+        .preview {
+            position: absolute;
+            right: -1px;
+            top: 40px;
+            height: 87%;
+            width: 100px;
+            border: 1px solid #00E4FF;
+            border-right: none;
+            transition: all .5s ease;
+        }
+        #character {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            z-index: 9999;
+        }
+        #productimg {
+            position: absolute;
+            height: 150px;
+            width: 150px;
+        }/* wardrobe css ends*/
+        .luckroyal {
+            position: fixed;
+            display: none;
+            top: 0;
+            left: 0px;
+            height: 99%;
+            width: 100%;
+            background-color: Black;
+            /*Replace this with some good dark mode background-image: LoL;*/
+            border: 2px solid #1F1F1F;
+            transition: all .5s ease;
+            z-index: 2;
+        }
+        .luckroyalHead {
+            height: 23px;
+            width: 99%;
+            border-bottom: 1px solid Gray;
+            background-color: White;
+            text-align: center;
+            color: #FFB500;
+            padding: 5px;
+        }
+        #luckroyalClose {
+            position: absolute;
+            right: 5px;
+            border: none;
+            background-color: transparent;
+        }
+        .spinWheel {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            height: 150px;
+            width: 150px;
+            border: 1px solid #FFC21F;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
         }
         #loader {
             position: fixed;
@@ -845,7 +1039,9 @@
             <button class="cancel" id="cancel" onclick="startTimer()">
               <span id="timer">0:00</span> 
               <div id="case">
-                  <div id="topPartclose"></div>
+                  <div id="topPartclose">
+                      <b id="closeIcon()" onclick="closeTimer()">X</b>
+                  </div>
                   <div id="bottomPartclose"></div>
               </div>
           </button>
@@ -856,6 +1052,9 @@
                 var bottomPartstart = document.getElementById("bottomPartstart");
                 var topPartclose = document.getElementById("topPartclose");
                 var bottomPartclose = document.getElementById("bottomPartclose");
+                var interval;
+                var seconds = 0;
+                var isTimerRunning = false; // Flag to keep track of the timer state
                 function openTimer() {
                     topPartstart.style.transition = ".2s ease";
                     topPartstart.style.width = "165px";
@@ -870,6 +1069,29 @@
 
                     bottomPartclose.style.transition = '.9s ease';
                     bottomPartclose.style.height = '38%';
+
+                    if (interval) return; // If timer is already running, do nothing.
+
+                    var timerElement = document.getElementById('timer');
+                    interval = setInterval(function() {
+                        seconds++;
+                        var formattedTime = formatTime(seconds);
+                        timerElement.textContent = formattedTime;
+
+                        if (seconds >= 10) {
+                            clearInterval(interval);
+                            interval = null; // Reset the interval variable
+                            window.location.href = 'https://teju0051.github.io/TGames/gamestop-lobby.html';
+                        }
+                    },
+                        1000);
+                }
+                function formatTime(seconds) {
+                    var minutes = Math.floor(seconds / 60);
+                    var remainingSeconds = seconds % 60;
+                    return minutes.toString().padStart(2,
+                        '0') + ':' + remainingSeconds.toString().padStart(2,
+                        '0');
                 }
                 function closeTimer() {
                     topPartstart.style.transition = ".2s ease";
@@ -884,83 +1106,15 @@
                     topPartclose.style.height = '50%';
                     bottomPartclose.style.transition = ".2s ease";
                     bottomPartclose.style.height = '50%';
+
+                    clearInterval(interval);
+                    interval = null;
+                    seconds = 0;
+                    document.getElementById('timer').textContent = "00:00";
+                    isTimerRunning = false;
                 }
             </script>
-            <script>
-              var interval;
-          
-              function startTimer() {
-                  if (interval) return; // If timer is already running, do nothing.
-                  var seconds = 0;
-                  var timerElement = document.getElementById('timer');
-                  interval = setInterval(function() {
-                      seconds++;
-                      var formattedTime = formatTime(seconds);
-                      timerElement.textContent = formattedTime;
-          
-                      if (seconds >= 10) {
-                          clearInterval(interval);
-                          interval = null; // Reset the interval variable
-                          window.location.href = 'https://teju0051.github.io/TGames/gamestop-lobby.html';
-                      }
-                  }, 1000);
-              }
-          
-              function formatTime(seconds) {
-                  var minutes = Math.floor(seconds / 60);
-                  var remainingSeconds = seconds % 60;
-                  return minutes.toString() + ':' + (remainingSeconds < 10 ? '0' : '') + remainingSeconds.toString();
-              }
-          </script>
-          
-          
-          
-          
         </div>
-        <canvas id="canvas"></canvas>
-
-        <!-- Include Babylon.js library -->
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var canvas = document.getElementById("canvas");
-                var engine = new BABYLON.Engine(canvas, true);
-
-                function createScene() {
-                    var scene = new BABYLON.Scene(engine);
-
-                    // Create a camera and set its position
-                    var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / -2, Math.PI / 4, 5, BABYLON.Vector3.Zero(), scene);
-                    camera.attachControl(canvas, true);
-
-                    // Load the .glb model
-                    var character = BABYLON.SceneLoader.Append("Assets/", "Anaya_Character_Standing.glb", scene, function (scene) {
-                        // do something with the scene
-                    });
-
-                    // Add lights to the scene
-                    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-                    light.intensity = 0.7;
-                    
-                    //clear the background, and make it transparent.
-                    scene.clearColor = BABYLON.Color4(0, 0, 0, 0);
-
-                    return scene;
-                }
-
-                var scene = createScene();
-
-                engine.runRenderLoop(function () {
-                    scene.render();
-                });
-
-                window.addEventListener("resize", function () {
-                    engine.resize();
-                });
-            });
-        </script>
     </div>
 </body>
 </html>
