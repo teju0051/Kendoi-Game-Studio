@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BW | LOBBY</title>
-    <link rel="stylesheet" href="luckroyalstyle.css" type="text/css" media="all" />
+    <title>BW | LOBBY</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -22,6 +21,7 @@
                 background-size: 100% auto;
             }
         }
+
         /* Media Query for mobile devices */
 @media screen and (max-width: 768px) {
             body {
@@ -105,6 +105,7 @@
             border-top-right-radius: 15px;
             transition-delay: .5s;
             transition: .5s ease;
+            overflow: hidden;
         }
         #topPartclose b {
             position: absolute;
@@ -516,8 +517,8 @@
             position: absolute;
             height: 150px;
             width: 150px;
-        }/* wardrobe css ends*/
-        .luckroyal {
+        }
+        .luckroyal { /* Luck Royale CSS starts here 👇*/
             position: fixed;
             display: none;
             top: 0;
@@ -531,31 +532,36 @@
             z-index: 2;
         }
         .luckroyalHead {
+            position: absolute;
+            left: 35%;
             height: 23px;
-            width: 99%;
-            border-bottom: 1px solid Gray;
+            width: 30%;
+            border: 1px solid Gray;
             background-color: White;
             text-align: center;
             color: #FFB500;
             padding: 5px;
+            overflow: hidden;
+            box-shadow: inset 0px 0px 10px #CBB26A;
+            -webkit-clip-path: polygon(10% 100%, 0% 0%, 100% 0%, 90% 100%);
         }
         #luckroyalClose {
             position: absolute;
-            right: 5px;
+            right: 10px;
             border: none;
             background-color: transparent;
         }
         .spinWheel {
             position: absolute;
             top: 30%;
-            left: 50%;
+            left: 35%;
             height: 150px;
             width: 150px;
             border: 1px solid #FFC21F;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             border-radius: 50%;
-        }
+        } /* Luck Royal CSS ends here*/
         #loader {
             position: fixed;
             z-index: 9999;
@@ -659,7 +665,15 @@
     </style>
 </head>
 <body>
-
+    <audio id="lobbymusic" style="display: none;" loop="">
+        <source src="https://github.com/teju0051/TGames/raw/main/lobbymusic.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="startbuttonSound" style="display: none;">
+        <source src="https://github.com/teju0051/TGames/raw/main/game-start-6104.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="optionbtnSound" style="display: none;">
+        <source src="https://github.com/teju0051/TGames/raw/main/knall1_lang-48122.mp3" type="audio/mpeg" />
+    </audio>
     <div id="loader">
         <button id="fullscreen_landscape" onclick="fullscreen()">⟩ Start Game ⟨</button>
     </div>
@@ -702,13 +716,26 @@
                         elem.msRequestFullscreen();
                     }
                     load_content();
+                    playLobbyMusic();
 
                     screen.orientation.lock("landscape-primary");
                 } else {
                     window.location.href = "https://teju0051.github.io/TGames/Home.html";
-
                 }
-
+            }
+            function playLobbyMusic() {
+                var lobbyMusic = document.getElementById("lobbymusic");
+                lobbyMusic.play();
+            }
+            function playStartSound() {
+                // You may give some other good name to this function, but make sure you make all necessary changes.
+                var startbuttonSound = document.getElementById("startbuttonSound");
+                startbuttonSound.play();
+            }
+            function playOptionbtnSound() {
+                // You may give some other good name to this function, but make sure you make all the necessary changes.
+                var optionbtnSound = document.getElementById("optionbtnSound");
+                optionbtnSound.play();
             }
             function load_content() {
                 // Show the content and hide the loader
@@ -719,44 +746,51 @@
             }
             function openWardrobe() {
                 document.getElementById('wardrobe').style.display = 'block';
+                playOptionbtnSound();
             }
             function openLuckRoyale() {
                 document.getElementById("luckroyal").style.display = "block";
-                // Add your code to open the Luck Royale
-                // For example, trigger a luck royale event or show luck royale options
+                playOptionbtnSound();
             }
             function openWeapon() {
                 console.log("Opening Weapons section...");
+                playOptionbtnSound();
                 // Add your code to open the Weapons section
                 // For example, display weapon selection or load weapon-related content
             }
             function openCharacter() {
                 console.log("Opening Characters section...");
+                playOptionbtnSound();
                 // Add your code to open the Character section
                 // For example, show available characters or allow Character customization
             }
             function openPets() {
                 console.log("Opening Pets Section...");
+                playOptionbtnSound();
                 // Add your code to open the Pets section
                 // For example, show available Pets or allow pet customization
             }
 
             //Want to leave game "function"?!
             function confirmExit() {
+                playOptionbtnSound();
                 var dialog = document.getElementById("confirmationDialog");
                 dialog.style.display = "block";
                 dialog.style.zIndex = "9999";
             }
             function confirmExitsubmain() {
+                playOptionbtnSound();
                 window.location.href = "https://teju0051.github.io/TGames/Home.html";
             } //Think again "function"!
             function cancelExit() {
+                playOptionbtnSound();
                 var dialog = document.getElementById("confirmationDialog");
                 dialog.style.display = "none";
             } //Thank you for not leaving the game "function"!
 
             document.addEventListener("keydown", function(event) {
                 if (event.key === "Escape") {
+                    playOptionbtnSound();
                     confirmExit();
                 }
             });
@@ -873,6 +907,7 @@
         <script type="text/javascript" charset="utf-8">
 
             function closeWardrobe() {
+                playOptionbtnSound();
                 document.getElementById('wardrobe').style.display = 'none';
                 document.getElementById("preview").style.transition = "all .5s ease";
                 document.getElementById("preview").style.width = "100px";
@@ -891,6 +926,7 @@
                 document.getElementById('preview').style.width = '200px';
             });
             function purchase() {
+                playOptionbtnSound();
                 console.log("2 Lakh successfully deducted from your account!");
                 // A function of purchase to frighten and make people run away! Just kidding.
             }
@@ -928,6 +964,7 @@
         <!--Luck Royal scripting-->
         <script type="text/javascript" charset="utf-8">
             function closeLuckroyal() {
+                playOptionbtnSound();
                 document.getElementById("luckroyal").style.display = "none";
             }
         </script>
@@ -994,6 +1031,7 @@
             <script type="text/javascript" charset="utf-8">
 
                 document.getElementById('openProfileBtn').addEventListener('click', function() {
+                    playOptionbtnSound();
                     document.getElementById('profile').style.transition = '.2s ease';
                     document.getElementById('profile').style.left = '25%';
                     document.getElementById('profile').style.opacity = '100%';
@@ -1021,11 +1059,13 @@
                 });
 
                 function saveBio() {
+                    playOptionbtnSound();
                     document.getElementById('profile').style.left = '-125%';
                     document.getElementById('profile').style.opacity = '0%';
                     //  Add more to code to let it update to server
                 }
                 function closeProfile() {
+                    playOptionbtnSound();
                     document.getElementById('profile').style.left = '-125%';
                     document.getElementById('profile').style.opacity = '0%';
                 }
@@ -1037,17 +1077,15 @@
                 <a href="#" onclick="openTimer()">Start</a>
                 <div id="bottomPartstart"></div>
             </div>
-            <button class="cancel" id="cancel" onclick="startTimer()">
-              <span id="timer">0:00</span> 
-              <div id="case">
-                  <div id="topPartclose">
-                      <b id="closeIcon()" onclick="closeTimer()">X</b>
-                  </div>
-                  <div id="bottomPartclose"></div>
-              </div>
-          </button>
-          
-          
+            <button class="cancel" id="cancel">
+                <span id="timer">0:00</span>
+                <div id="case">
+                    <div id="topPartclose">
+                        <b id="closeIcon()" onclick="closeTimer()">X</b>
+                    </div>
+                    <div id="bottomPartclose"></div>
+                </div>
+            </button>
             <script type="text/javascript" charset="utf-8">
                 var topPartstart = document.getElementById("topPartstart");
                 var bottomPartstart = document.getElementById("bottomPartstart");
@@ -1056,6 +1094,7 @@
                 var interval;
                 var seconds = 0;
                 var isTimerRunning = false; // Flag to keep track of the timer state
+
                 function openTimer() {
                     topPartstart.style.transition = ".2s ease";
                     topPartstart.style.width = "165px";
@@ -1086,6 +1125,8 @@
                         }
                     },
                         1000);
+
+                    playStartSound();
                 }
                 function formatTime(seconds) {
                     var minutes = Math.floor(seconds / 60);
@@ -1105,6 +1146,7 @@
 
                     topPartclose.style.transition = ".2s ease";
                     topPartclose.style.height = '50%';
+
                     bottomPartclose.style.transition = ".2s ease";
                     bottomPartclose.style.height = '50%';
 
