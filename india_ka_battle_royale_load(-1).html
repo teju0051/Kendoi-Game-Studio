@@ -3,7 +3,9 @@
 <head>
   <link rel="icon" type="x-image" href="https://i.ibb.co/Y0gpk6r/GAME-LOGO.jpg">
 
+ 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="icon" href="https://www.linkpicture.com/q/newlogo_5.png" type="image">
 <title> T-Games </title>
 </head>
@@ -39,11 +41,11 @@
             object-fit: cover;
           }
           body {
-            background-image: url('https://i.ibb.co/4NnX1My/9aae685f-23be-479f-b2c1-74fd5190bbc3.jpg');
+            background: url('https://teju0051.github.io/TGames/WhatsApp%20Video%202023-08-22%20at%205.22.56%20PM.mp4') no-repeat center center fixed;
             background-size: cover;
-            background-repeat: no-repeat; /* Prevent the background image from repeating */
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            left: 10%;
         }
+        
         
 		  
                 
@@ -192,6 +194,69 @@
    
 </head>
 <body>
+  <video autoplay loop muted id="video-background">
+    <source src="https://teju0051.github.io/TGames/WhatsApp%20Video%202023-08-22%20at%205.22.56%20PM.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<style>
+  #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    #video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+#myButton {
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  position: fixed;
+  transform: translateX(480%);
+  bottom: 30px;
+  animation: opacityLoop 1s infinite; /* Animation applied */
+  border: none;
+}
+
+@keyframes opacityLoop {
+  0% {
+      opacity: 0.3; /* Low opacity */
+  }
+  50% {
+      opacity: 0.7; /* Medium opacity */
+  }
+  100% {
+      opacity: 1; /* High opacity */
+  }
+}
+
+@media (max-width: 768px) {
+  #myButton {
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+</style>
+
   
 
   <!---
@@ -212,7 +277,7 @@
   -->
    
     <!-- Button to play sound and display popup -->
-    <button id="myButton"><Label>LETS BEGIN</Label></button>
+    <button id="myButton"><Label>TAP TO BEGIN</Label></button>
 
     <!-- Popup content -->
 
