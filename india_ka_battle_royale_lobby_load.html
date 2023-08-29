@@ -585,7 +585,16 @@
             text-align: center;
             font-family: Arial, sans-serif;
             overflow: hidden; /* Hide overflowing glitter */
+        
+            /* Media query for smaller screens (e.g., mobile phones) */
+            @media (max-width: 600px) {
+                height: 10vh; /* Decreased height for smaller screens */
+                border-radius: 30%; /* Adjusted border radius for mobile */
+                font-size: 40px;
+            }
         }
+        
+        
         
         #fullscreen_landscape::before {
             content: '';
