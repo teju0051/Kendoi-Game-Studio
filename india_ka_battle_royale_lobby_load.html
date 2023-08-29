@@ -12,10 +12,14 @@
             background-image: url('https://i.ibb.co/WHC6rS5/Background.jpg');
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; /* Keep the background fixed */
             overflow: hidden;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             z-index: 0;
         }
+        
+        
         /* Media Query for landscape mode */
 @media screen and (orientation: landscape) {
             body {
@@ -566,12 +570,22 @@
         #fullscreen_landscape {
             position: absolute;
             top: 50%;
-            height: 9.184%;
-            width: 58.6%;
-            background-color: #2761c3;
-            border-radius: 30%;
-            font-size: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 15vh; /* Increased height for a more prominent appearance */
+            width: 60%;
+            background: linear-gradient(45deg, #FF4500, #FF5733, #000);
+            border-radius: 50px; /* Rounded corners for a softer look */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8vw;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
+        
         .dialog {
             display: none;
             position: fixed;
@@ -643,16 +657,16 @@
 <body>
    
     <audio id="lobbymusic" style="display: none;" loop="">
-        <source src="https://github.com/teju0051/TGames/raw/main/lobbymusic.mp3" type="audio/mpeg" />
+        <source src="https://teju0051.github.io/TGames/lobbymusic.mp3" type="audio/mpeg" />
     </audio>
     <audio id="startbuttonSound" style="display: none;">
-        <source src="https://github.com/teju0051/TGames/raw/main/knall1_lang-48122.mp3" type="audio/mpeg" />
+        <source src="https://teju0051.github.io/TGames/knall1_lang-48122.mp3" type="audio/mpeg" />
     </audio>
     <audio id="optionbtnSound" style="display: none;">
-        <source src="https://github.com/teju0051/TGames/raw/main/button_sound.mp3" type="audio/mpeg" />
+        <source src="https://teju0051.github.io/TGames/button_sound.mp3" type="audio/mpeg" />
     </audio>
     <div id="loader">
-        <button id="fullscreen_landscape" onclick="fullscreen()">⟩ Start Game ⟨</button>
+        <button id="fullscreen_landscape" onclick="fullscreen()"> Tap to Start</button>
     </div>
     <div id="content" style="display: none;">
         <div id="container">
@@ -1129,24 +1143,29 @@
 </div>
 
 <script>
+    var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
     // Function to show popup and play sound
-    function addFriend(btnNumber) {
-        var imagePopup = document.getElementById("imagePopup");
-        var popupSound = document.getElementById("popupSound");
-
-        imagePopup.style.display = "flex"; // Show the popup
-        popupSound.play(); // Play the sound effect
-        console.log("Button " + btnNumber + " clicked");
+    function addFriend() {
+        if (isTouchDevice) {
+            var imagePopup = document.getElementById("imagePopup");
+            var popupSound = document.getElementById("popupSound");
+    
+            imagePopup.style.display = "flex"; // Show the popup
+            popupSound.play(); // Play the sound effect
+        }
     }
-
+    
     // Function to close the popup
     function closePopup() {
         var imagePopup = document.getElementById("imagePopup");
         var popupSound = document.getElementById("popupSound");
-
+    
         imagePopup.style.display = "none"; // Hide the popup
         popupSound.pause(); // Pause the sound effect
+        popupSound.currentTime = 0;
     }
+    
 </script>
      
       <style>
