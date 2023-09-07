@@ -52,43 +52,12 @@
                   // Show the logo
                   document.getElementById('logo-container').classList.add('show');
                   
-                  // Set a cookie to remember that the logo has been shown
-                  setCookie('hasShownLogo', true, 365); // Expires in 365 days
-                }
-              });
-              
-              function setCookie(name, value, days) {
-                var expires = '';
-                if (days) {
-                  var date = new Date();
-                  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                  expires = '; expires=' + date.toUTCString();
-                }
-                document.cookie = name + '=' + value + expires + '; path=/';
-              }
-              
-              function getCookie(name) {
-                var nameEQ = name + '=';
-                var ca = document.cookie.split(';');
-                for (var i = 0; i < ca.length; i++) {
-                  var c = ca[i];
-                  while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-                }
-                return null;
-              }
+                }})
               
               setTimeout(function() {
                 window.location.href = 'https://teju0051.github.io/TGames/india_ka_battle_royale_load(2).html'; // Replace 'newpage.html' with the desired URL
               }, 7000);
-             //ban mobile devices
-        window.addEventListener('DOMContentLoaded', function() {
-          var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      
-          if (isMobile) {
-              alert("System has detected you are using mobile, This game only support PC.");
-          }
-      });
+        
       
           </script>
     </body>
