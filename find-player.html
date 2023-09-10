@@ -54,9 +54,16 @@
     <div class="search-container">
         <input type="text" id="search-bar" placeholder="Enter UID">
         <button id="search-button">Search</button>
+        <button id="search-button" onclick="goBack()">Go Back</button>
         <p id="error-message"></p>
     </div>
     <script>
+  
+            function goBack() {
+                // Use JavaScript to navigate back in the browser's history
+                window.history.back();
+            }
+  
 		// Get the search bar and error message elements
 const searchInput = document.getElementById("search-bar");
 const errorMessage = document.getElementById("error-message");
