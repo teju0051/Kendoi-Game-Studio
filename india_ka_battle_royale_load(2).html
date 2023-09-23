@@ -322,9 +322,14 @@ function loginUser() {
  var password = document.getElementById("password").value;
 
  // Example: Check if username and password are correct
-if (username === "T-Games-Sonal" && password === "sonal@123") {
+if (username === "T-Games-Sonal" && password === "sonal@00001") {
   // Redirect to the new page (replace 'new_page.html' with your actual URL)
-  window.location.href = "https://teju0051.github.io/account-access/uid=00001.html";
+  window.location.href = "https://teju0051.github.io/account-access/uid=00001.html";}
+
+  if (username === "T-Games-Rani" && password === "rani@00002") {
+	// Redirect to the new page (replace 'new_page.html' with your actual URL)
+	window.location.href = "https://teju0051.github.io/account-access/uid=00002.html";  
+
   return false; // Prevent form submission
 } else {
   alert("Login failed. Please check your credentials.");
