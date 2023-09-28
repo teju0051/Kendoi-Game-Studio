@@ -4,7 +4,9 @@
   <link rel="icon" type="x-image" href="https://i.ibb.co/Y0gpk6r/GAME-LOGO.jpg">
 
  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <link rel="icon" href="https://www.linkpicture.com/q/newlogo_5.png" type="image">
 <title> T-Games </title>
@@ -53,8 +55,9 @@
 }
 
 body {
-  background: url('https://teju0051.github.io/TGames/WhatsApp%20Video%202023-08-22%20at%205.22.56%20PM.mp4') no-repeat center center fixed;
-  background-size: cover;
+  background-image: url('https://i.ibb.co/4NnX1My/9aae685f-23be-479f-b2c1-74fd5190bbc3.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
   left: 10%;
 }
 
@@ -142,39 +145,29 @@ button {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   /* Responsive styles for smaller screens */
   .popup {
       width: 80%;
-      padding: 10px;
+      height: 90%;
+      padding: 1px;
       font-size: 14px;
   }
 
   button {
-      left: 50%;
+      left: 0%;
       transform: translateX(-50%);
       
   }
 }
-#video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-}
+.no-login
+{
+text-align: center;
+left: 65%;
 
+}
 @media (max-width: 768px) {
-  #video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
+
 }
 #myButton {
 background-color: transparent;
@@ -205,12 +198,6 @@ border: none;
 }
 }
 
-@media (max-width: 768px) {
-#myButton {
-    left: 50%;
-    transform: translateX(-50%);
-}
-}
 .popo
 {
 color: aliceblue;
@@ -221,30 +208,21 @@ justify-content: center;
 .popo1
 {
 color: aliceblue;
-left: 50%;
+left: 70%;
 text-align: center;
 justify-content: center;
 }
-.no-login
-{
-text-align: center;
-left: -50%;
 
-}
 </style>
   
    
 </head>
 <body>
-  <video autoplay loop muted id="video-background">
-    <source src="https://teju0051.github.io/TGames/WhatsApp%20Video%202023-08-22%20at%205.22.56%20PM.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
 
 
  
 <div id="loginPopup" class="popup" style="display: none;">
-  <div class="content"><hr>
+  <div class="content">
       <h1 class="popo">Bharatiya Warrior Login</h1><hr><br><br><br>
       <form id="login-form" onsubmit="return loginUser()">
           <label for="username" placeholder="username"class="popo">Username:</label>
@@ -260,7 +238,7 @@ left: -50%;
 </div>
     <!-- Button to play sound and display popup -->
     <button id="myButton" onclick="showLoginPopup()">LOGIN</button>
-    <button  class="no-login" onclick="window.location.href='https://teju0051.github.io/TGames/india_ka_battle_royale_load(-1).html';">Continue without login</button>
+    <button  class="no-login" onclick="window.location.href='https://teju0051.github.io/TGames/india_ka_battle_royale_load(-1).html';">Continue as Guest</button>
     
 
     <!-- Popup content 
@@ -314,28 +292,37 @@ function showLoginPopup() {
  var popup = document.getElementById("loginPopup");
  popup.style.display = "block";
 }
-
-// Function to handle the login
 function loginUser() {
- // Replace this with your login logic
- var username = document.getElementById("username").value;
- var password = document.getElementById("password").value;
+  // Replace this with your login logic
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
 
- // Example: Check if username and password are correct
-if (username === "T-Games-Sonal" && password === "sonal@00001") {
-  // Redirect to the new page (replace 'new_page.html' with your actual URL)
-  window.location.href = "https://teju0051.github.io/account-access/uid=00001.html";}
+  if (username === "T-Games-Sonal" && password === "sonal@00001") {
+    // Play the audio for 3 seconds
+    var audio = new Audio("https://teju0051.github.io/TGames/भारतीय_warrior_welcome.mp3");
+    audio.play();
+    setTimeout(function () {
+      // Redirect to the new page (replace 'new_page.html' with your actual URL)
+      window.location.href = "https://teju0051.github.io/account-access/uid=00001.html";
+    }, 3000); // 3 seconds delay for audio
 
-  if (username === "T-Games-Rani" && password === "rani@00002") {
-	// Redirect to the new page (replace 'new_page.html' with your actual URL)
-	window.location.href = "https://teju0051.github.io/account-access/uid=00002.html";  
 
+  } else if (username === "T-Games-Rani" && password === "rani@00002") {
+    // Play the audio for 3 seconds
+    var audio = new Audio("https://teju0051.github.io/TGames/भारतीय_warrior_welcome.mp3");
+    audio.play();
+    setTimeout(function () {
+      // Redirect to the new page (replace 'new_page.html' with your actual URL)
+      window.location.href = "https://teju0051.github.io/account-access/uid=00002.html";
+    }, 3000); // 3 seconds delay for audio
+
+    
+  } else {
+    alert("Login failed. Please check your credentials.");
+  }
   return false; // Prevent form submission
-} else {
-  alert("Login failed. Please check your credentials.");
-  return false; // Prevent form submission 
 }
-}
+
 
    
  </script>
