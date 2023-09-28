@@ -82,8 +82,9 @@
 		  {
 		  
 		  transform: translateY(100%);
-		  transform: translateX(260%);
+		  transform: translateX(280%);
 		  background-color: rgb(255, 255, 255);
+          text-align: center;
 		  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		  
 		  }
@@ -186,7 +187,77 @@
                           transform: translateX(-50%);
                       }
                   }
-                                      
+                  @media (max-width: 1000px) {
+                    .popup {
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 60%; /* Reduce the width */
+                        height: 310px; /* Reduce the height */
+                        padding: 20px;
+                        background-color: #000000;
+                        border: 1px solid #dcdcdc;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        z-index: 9999;
+                      }
+                      button {
+                        background-color: #f00;
+                        color: #fff;
+                        font-weight: bold;
+                        cursor: pointer;
+                        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+                        border: 2px solid #fff;
+                        border-radius: 5px;
+                        font-family: 'Press Start 2P', cursive;
+                        font-size: 14px; /* Reduce the font size */
+                        padding: 8px 16px; /* Reduce the padding */
+                        position: fixed;
+                        transform: translateX(450%);
+                        bottom: 30px;
+                      }
+                    }   
+                    .warning{
+                        
+                        text-align: center;
+                        color: red;
+                        font-size: 25px;
+                        margin-bottom: 10px;
+                        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        
+                    }
+                    b{
+                        color:red;
+                        font-size: 15px;
+                        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                      }
+                    
+                    p{
+                        font-size: 12px;
+                        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        text-align: center;
+                        color:red;
+                    }
+                    button {
+                        background-color: #f00;
+                        color: #fff;
+                        font-weight: bold;
+                        cursor: pointer;
+                        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+                        border: 2px solid #fff;
+                        border-radius: 5px;
+                        font-family: 'Press Start 2P', cursive;
+                        font-size: 12px;
+						position: fixed;
+						transform: translateX(380%);
+      bottom: 30px;
+                      }
+                      h3{
+                        color:#ff9100;
+                        text-align: center;
+                        font-size: 12px;
+                      }                                                         
                       
     </style>
    
@@ -224,10 +295,11 @@
 			   <hr><br>
 			
 			<h6 style="color:red" align="center"> <i></i></h6><br>
-			<div class="warning">&#9888;</div><p>We have detected abnormal activities associated with your account. As a result, your account has been suspended. <br> <br><br> <br> <br></p> <br> <br> <br> <br>
+			<div class="warning">&#9888;</div><p>We have detected abnormal activities associated with your account, and as a result, your account has been suspended.</p>
+            <br> <br><br> <br> <br></p> <br> <br> <br> <br>
 			</py-script>
-			<button  style="color:rgb(154, 129, 1); font-size: 18px; padding: 11px 24px; " class="center-right"  onclick="window.location.href='https://teju0051.github.io/TGames/user-banned.html';"><b>CONFIRM</b></button> 
-			<br> <BR>
+			<button  style="color:rgb(154, 129, 1); font-size: 2px; padding: 1px 4px; " class="center-right"  onclick="window.location.href='https://teju0051.github.io/TGames/user-banned.html';"><b>CONFIRM</b></button> 
+			<br> <br>
 	
 		
     </div>
@@ -257,14 +329,8 @@
   button.addEventListener("click", playSound);
   button.addEventListener("click", showPopup);
 
-  // Ban mobile devices
-  window.addEventListener('DOMContentLoaded', function() {
-      var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  
-      if (isMobile) {
-          alert("System has detected you are using mobile, This game only supports PC.");
-      }
-  });
+ 
+
       
     </script>
 </body>
