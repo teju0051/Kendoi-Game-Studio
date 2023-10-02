@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/babylon.max.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+        <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+        <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.js"></script>
+    </head>
+    <body>
+        <canvas id="lobbyCharacterCanvas">
+            
+			<script type="text/javascript" charset="utf-8">
+				document.addEventListener("DOMContentLoaded", function () {
+					var canvas = document.getElementById("lobbyCharacterCanvas");
+					var engine = new BABYLON.Engine(canvas, true);
+					
+					function createScene() {
+						var scene = new BABYLON.Scene(engine);
+						
+						// Load the .glb model
+						BABYLON.SceneLoader.Append("/", "Jayesh_char_bw.glb", scene, (character) => { // Please put your actual path of the character here
+							const Sonal = character[0];
+							camera.setTarget = Sonal;
+							Sonal.rotation.x = 0;
+						});
+						
+						// Create a camera and set its position
+						var camera = new BABYLON.FreeCamera("lobbyCamera", new BABYLON.Vector3(0, 0.8, -2), scene);
+						camera.allowKeyboardMove = false;
+						camera.allowMouseMove = false;
+						camera.attachControl(canvas, false);
+						
+						// Add lights to the scene
+						var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 1), scene);
+						light.intensity = 0.7;
+						scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
+						
+						return scene;
+					}
+					
+					var scene = createScene();
+					
+					engine.runRenderLoop(function() {
+						scene.render();
+					});
+					
+					window.addEventListener("resize", function() {
+						engine.resize();
+					});
+				});
+			</script>
+		</canvas>
+    </body>
+</html>
