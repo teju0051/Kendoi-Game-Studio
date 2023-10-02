@@ -85,15 +85,23 @@
 		  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 		}
 	
-		// Show a warning message if the user is on a mobile device
-		window.onload = function () {
-		  if (isMobileDevice()) {
-			var confirmation = confirm("This website does not fully support mobile devices. Do you want to continue?");
-			if (!confirmation) {
-			  window.close(); // Close the browser if the user chooses not to continue
-			}
-		  }
-		}
+	// Function to check if the user is on a mobile device
+function isMobileDevice() {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+  
+  window.onload = function () {
+	if (isMobileDevice()) {
+	  var confirmation = confirm("This website does not fully support mobile devices. Press 'OK' to be redirected to our mobile-optimized website.");
+	  if (!confirmation) {
+		window.close(); // Close the browser if the user chooses not to continue
+	  } else {
+		// Redirect the user to the specified URL
+		window.location.href = "https://tgamesappmobile.my.canva.site/";
+	  }
+	}
+  }
+  
 	  </script>
 	<style>
 		
