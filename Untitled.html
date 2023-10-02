@@ -12,6 +12,7 @@
         <canvas id="lobbyCharacterCanvas">
             
 			<script type="text/javascript" charset="utf-8">
+				
 				document.addEventListener("DOMContentLoaded", function () {
 					var canvas = document.getElementById("lobbyCharacterCanvas");
 					var engine = new BABYLON.Engine(canvas, true);
@@ -23,7 +24,7 @@
 						BABYLON.SceneLoader.Append("./", "Sonal_Standing_Animation.glb", scene, (character) => { // Please put your actual path of the character here
 							const Sonal = character[0];
 							camera.setTarget = Sonal;
-							Sonal.rotation.x = 0;
+                            Sonal.rotation.x = Math.PI;
 						});
 						
 						// Create a camera and set its position
@@ -50,6 +51,7 @@
 						engine.resize();
 					});
 				});
+			
 			</script>
 		</canvas>
     </body>
