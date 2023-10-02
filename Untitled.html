@@ -20,7 +20,7 @@
 						var scene = new BABYLON.Scene(engine);
 						
 						// Load the .glb model
-						BABYLON.SceneLoader.Append("/", "Jayesh_char_bw.glb", scene, (character) => { // Please put your actual path of the character here
+						BABYLON.SceneLoader.Append("./", "Sonal_Standing_Animation.glb", scene, (character) => { // Please put your actual path of the character here
 							const Sonal = character[0];
 							camera.setTarget = Sonal;
 							Sonal.rotation.x = 0;
