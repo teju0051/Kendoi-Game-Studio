@@ -262,8 +262,8 @@ justify-content: center;
   -->
 
     <!-- Audio file for the sound -->
-    <audio id="myAudio">
-        <source src="https://teju0051.github.io/TGames/acount-suspend-effect.mp3" type="audio/mpeg">
+    <audio id="myAudio" loop>
+        <source src="https://teju0051.github.io/music-assests/welcome_sound.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -298,24 +298,28 @@ function loginUser() {
   var password = document.getElementById("password").value;
 
   if (username === "T-Games-Sonal" && password === "sonal@00001") {
-    // Play the audio for 3 seconds
-    var audio = new Audio("https://teju0051.github.io/TGames/भारतीय_warrior_welcome.mp3");
-    audio.play();
+   
     setTimeout(function () {
       // Redirect to the new page (replace 'new_page.html' with your actual URL)
       window.location.href = "https://teju0051.github.io/account-access/uid=00001.html";
-    }, 3000); // 3 seconds delay for audio
+    }, 2000); // 2 second timer
 
 
   } else if (username === "T-Games-Rani" && password === "rani@00002") {
-    // Play the audio for 3 seconds
-    var audio = new Audio("https://teju0051.github.io/TGames/भारतीय_warrior_welcome.mp3");
-    audio.play();
+   
     setTimeout(function () {
       // Redirect to the new page (replace 'new_page.html' with your actual URL)
       window.location.href = "https://teju0051.github.io/account-access/uid=00002.html";
-    }, 3000); // 3 seconds delay for audio
+    }, 2000); 
 
+  }
+    else if (username === "T-Games-India" && password === "testplay01") {
+     
+      setTimeout(function () {
+        // Redirect to the new page (replace 'new_page.html' with your actual URL)
+        window.location.href = "https://teju0051.github.io/account-access/uid=00003.html";
+      }, 2000); 
+  
     
   } else {
     alert("Login failed. Please check your credentials.");
