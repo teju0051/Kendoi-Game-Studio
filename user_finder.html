@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+       /* Body Styles */
+        .battle-royale-body {
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            display: flex;
+        }
+
+        /* Disable zooming in */
+        @viewport {
+            width: device-width;
+            zoom: 1.0;
+        }
+
+        /* Container styles */
+        .container {
+            text-align: center;
+            background-color: #858585;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05); /* Enlarge the container on hover */
+        }
+
+        /* Heading styles */
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Change heading text color on hover */
+        }
+
+        /* Search box styles */
+        .search-box {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff; /* Change border color on focus */
+        }
+
+        /* Button styles */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Message styles */
+        .message {
+            background-color: #ff0000; /* Red background */
+            color: #ffffff; /* White text color */
+            padding: 20px; /* Padding around the message */
+            border-radius: 5px; /* Rounded corners */
+            margin-top: 20px; /* Margin to separate from other content */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Image div styles */
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            width: 100%; /* Make the image full width */
+            height: 120px;
+        } 
+    </style>
+    <title>Battle Royale Page</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://i.ibb.co/C7K7kWh/Untitled-design-3.png" alt="Image">
+    </div>
+    <div class="battle-royale-body">
+        <div class="container">
+            <h1>Find your friends</h1>
+            <div class="search-box">
+                <input type="text" id="uidInput" placeholder="Enter UID">
+                <button id="searchButton">Search</button>
+                <button onclick="window.location.href='https://teju0051.github.io/Bharatiya-warrior-users-account/uid=00001.html';">Back to lobby</button>
+            </div>
+            <div id="result"></div>
+        </div>
+    </div>
+   
+   
+    <div class="message">
+        <p>Dear Warriors, we're aware of the<b> 'Enable Landscape'</b> button issue in your lobby and are actively working on it. Thank you for your patience.</p>
+        <p>- Bharatiya Warrior Operation Team.</p>
+    </div>
+    <script>
+        // Get references to elements
+        const uidInput = document.getElementById('uidInput');
+        const searchButton = document.getElementById('searchButton');
+        const result = document.getElementById('result');
+
+        // Event listener for the search button
+        searchButton.addEventListener('click', () => {
+            const userInput = uidInput.value.trim();
+
+            // Check if the user input matches the expected UID
+            if (userInput === '00001') {
+                // Redirect to the target page (replace 'target.html' with your actual target URL)
+                window.location.href = 'https://teju0051.github.io/bw_user_profile_page/uid=00001.html';
+            } else {
+                // Display an error message
+                result.innerText = 'UID not found';
+                result.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
