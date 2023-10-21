@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<STYLE>
+		@media (min-width: 1000px) {
+			.logo {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100px; /* adjust the size as needed */
+			  height: auto;
+			  margin: 10px;
+			}
+		}	.but{
+      background-color: #333;
+      padding: 20px;
+    }
+	.img {
+		height: 300px;
+		width: 300px;
+		margin-bottom: 20px;}
+		body {
+			background-color: #111;
+			color: green;
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 18px;
+			line-height: 1.5;
+			 transform: translateY(0);
+		}
+	
+		/* Header */
+		header {
+			padding: 20px;
+			text-align: center;
+			background-color: #222;
+			border-bottom: 2px solid green;
+		}
+	
+		/* Navigation */
+		nav {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: #333;
+			border: 2px solid green;
+			box-shadow: 0 0 10px green;
+		}
+	
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}   nav li {
+			display: inline-block;
+			margin-right: 20px;
+		}nav a {
+			color: #fff;
+			text-decoration: none;
+		}  nav a:hover {
+			color: green;
+			text-decoration: underline;
+		}  main {
+			padding: 20px;
+			background-color: #222;
+			border: 2px solid green;
+			box-shadow: 0 0 10px green;
+		} button {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: green;
+			color: #fff;
+			font-size: 18px;
+			cursor: pointer;
+		}    button:hover {
+			background-color: rgb(1, 255, 1);
+		}   img {
+			max-width: 100%;
+			height: auto;
+			margin: 20px 0;
+			box-shadow: 0 0 10px green;
+			max-height: 130px;
+			align-content:flex-start;
+		} footer {
+			padding: 20px;
+			text-align: center;
+			background-color: #222;
+			border-top: 2px solid green;
+		}
+		#button-container {
+		  position: fixed;
+		  top: 10;
+		  left: 120;
+		  transform: translateY(90%);
+		  transform: translateX(30%);
+	
+		}
+	
+  
+  h1 {
+	color: #ffffff;
+	font-size: 2rem;
+	margin-top: 20px;
+  }
+  
+  /* Style for the scrambled word display */
+  #scrambled-word {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-top: 20px;
+  }
+  
+  /* Style for the hint */
+  #hint {
+	font-style: italic;
+	color: #555;
+	margin: 10px 0;
+  }
+  
+  /* Style for the user input and check button */
+  #user-input {
+	width: 200px;
+	padding: 5px;
+	font-size: 1.2rem;
+  }
+  
+  #check-answer {
+	padding: 5px 15px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	font-size: 1.2rem;
+	cursor: pointer;
+  }
+  
+  #check-answer:hover {
+	background-color: #45a049;
+  }
+  
+  /* Style for the message text */
+  #message {
+	font-weight: bold;
+	color: #4CAF50;
+	margin-top: 10px;
+  }
+  
+  /* Style for the background music control */
+  #audio-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+  }
+  
+  /* Style for the game container */
+  .game {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h3{
+	color:blue;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+img {
+	max-height: 130px;
+	margin: 10px; 
+	align-content:flex-start;
+  }
+  #container{
+	text-align: center;
+  }
+  .alert {
+	background-color: #00ff4c; /* Yellow alert background color */
+	color:rgb(0, 0, 0);
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.bold{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: #111;
+
+}
+	</STYLE>
+  </head>
+  <header>
+	<img class="logo" src="https://i.ibb.co/3TvyZ3y/Check-out-my-new-logo-made-on-Looka-Google-Chrome-05-09-2023-14-12-08.png" alt="Logo">
+	<h1>Word Scramble </h1>
+</header><nav>
+<ul>
+  <li><a href="https://teju0051.github.io/TService/T-Games.html">HOME</a></li>
+  <li><a href="https://teju0051.github.io/TService/T-Art.html">T-ART</a></li>
+  <li><a href="https://teju0051.github.io/TService/home.html">T-SERVICE</a></li>
+  <li><a href="https://teju0051.github.io/TService/T-Tech.html">T-TECH</a></li>
+  </ul>
+  </nav><br>
+  <body>
+	<div id="container">
+    <div id="scrambled-word"></div>
+    <div id="hint"></div>
+    <input type="text" id="user-input" placeholder="Enter your answer">
+    <button id="check-answer">Check</button>
+	<button id="check-answer" onclick="window.location.reload()">New Word</button>
+    <p id="message"></p>
+	</div>
+	<hr>
+	<h4 class="but">OPTIONS</h4>
+	<button id="backButton" onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';">BACK</button>
+	<button onclick="window.location.href='https://forms.gle/fnfGjyd4nwComz9F8';">FEEDBACK</button><br>
+	<h4 class="but">About the game </h4>
+	<h5 class="alert">Dynamic Word Selection:
+
+	<u>At the beginning of each round, the game dynamically selects a random word from an extensive word bank.<br> You have to Scramble name of animal,bird,places and fruit.<br><br></u>
+		Real-Time Scrambling:
+		
+		<u>The chosen word is instantly transformed into a captivating, scrambled version, challenging players to unscramble it.<br><br></u>
+		
+		Interactive User Input:
+		
+		<u>An intuitive input field empowers players to submit their best guess, creating a sense of participation and excitement.<br><br></u>
+		Immediate Validation:
+		
+		<u>In real-time, the game evaluates the player's answer, offering instant feedback that keeps the momentum alive.<br><br></u>
+		Constructive Feedback:
+		
+		<u>Constructive feedback, in the form of "Correct!" or "Try again!", guides players toward mastery and promotes a growth mindset.<br><br></u>
+		Seamless Transition:
+		
+		<u>After each round, the game seamlessly transitions to the next word, ensuring a continuous and enjoyable experience.<br><br></u>
+		Challenging Rounds:
+		
+		<u>Players can enjoy multiple rounds of word scrambling, with each word increasing in complexity, providing an escalating challenge.<br><br></u>
+		Final Score Showcase:
+		
+		<u>At the end of the game, the player's final score is prominently displayed, allowing them to measure their success and set new goals.<br><br></u>
+		Change word Option:
+		
+		<u>For those who things it's hard just try other words!</h5></u>
+	<br>
+	<footer><p id="welcome-text">&copy; 2023 T-Games. All rights reserved.</p></footer>
+    <script>
+		const words = ["apple", "banana", "cherry", "date", "fig", "grape",
+		 "kiwi", "lemon", "mango", "orange", "papaya", "pineapple", "raspberry",
+		  "strawberry", "watermelon", "blueberry", "blackberry", "cranberry", "guava", "lychee",
+		  "lion", "tiger", "elephant", "giraffe", "zebra", "monkey", "dolphin", "koala", "penguin", 
+		  "cheetah", "kangaroo", "panda", "hippopotamus", "crocodile", "rhinoceros", "ostrich", 
+		  "gorilla", "octopus", "seahorse", "platypus","sparrow", "eagle", "robin", "hawk",
+		   "pigeon", "parrot", "owl", "peacock", "swan", "pelican", "hummingbird",
+		    "flamingo", "falcon", "seagull", "canary", "cuckoo", "blue jay", "toucan",
+			 "woodpecker", "finch", "delhi", "mumbai", "kolkata", "bangalore", "chennai",
+			  "hyderabad", "jaipur", "varanasi", "agra", "goa", "kochi", "shimla", "mysore",
+			   "pune", "amritsar", "lucknow", "ooty", "rishikesh", "kerala", "rajasthan"];
+
+		let scrambledWord, hint, targetWord;
+  
+		function getRandomWord() {
+		  const randomIndex = Math.floor(Math.random() * words.length);
+		  return words[randomIndex];
+		}
+  
+		function scrambleWord(word) {
+		  return word.split('').sort(() => 0.5 - Math.random()).join('');
+		}
+  
+		function newRound() {
+		  targetWord = getRandomWord();
+		  scrambledWord = scrambleWord(targetWord);
+		  hint = `Hint: It's a fruit with ${targetWord.length} letters.`;
+  
+		  document.getElementById("scrambled-word").textContent = scrambledWord;
+		  document.getElementById("message").textContent = "";
+		}
+  
+		document.getElementById("check-answer").addEventListener("click", () => {
+		  const userAnswer = document.getElementById("user-input").value.toLowerCase(); // Convert to lowercase
+		  if (userAnswer === targetWord.toLowerCase()) { // Compare in a case-insensitive manner
+			document.getElementById("message").textContent = "Correct! You found the word.";
+			newRound();
+		  } else {
+			document.getElementById("message").textContent = "Try again!";
+document.getElementById("message").style.color = "red";
+		  }
+		});
+  
+		newRound();
+
+	</script>
+  </body>
+</html>
