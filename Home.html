@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>T-Games</title>
+	<title>T-Games India</title>
 	<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +47,7 @@
 				</li>
 				<li>
 					<a href="https://teju0051.github.io/TGames/scrambled-word.html">
-						<img src="https://i.ibb.co/NC1RCT8/Brandmark-make-your-logo-in-minutes-Google-Chrome-21-10-2023-12-44-14.png" alt="Your Game Logo" style="width: 100%;"id="welcome-text">
+						<img src="https://i.ibb.co/Sdy86fL/Brandmark-make-your-logo-in-minutes-Google-Chrome-21-10-2023-12-44-14.png" alt="Your Game Logo" style="width: 100%;"id="welcome-text">
 					</a>
 					<h3 id="welcome-text">Scramble Rumble</h3>
 				</li>
@@ -110,7 +110,7 @@ function isMobileDevice() {
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #333; /* Add your desired background color */
+	  background: linear-gradient(to bottom, blue, #8e44ad);
       color: white; /* Text color for the header */
       padding: 10px; /* Adjust padding as needed */
       z-index: 100; /* Ensure the header appears above other content */
@@ -143,7 +143,7 @@ function isMobileDevice() {
 			color:#000000b2;
 			text-align: center;
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom, black, white);
+			background: linear-gradient(to bottom, #3498db, #8e44ad);
 		}
 		.img{
 			position:relative;
@@ -154,7 +154,7 @@ function isMobileDevice() {
       opacity: 80%; 
 		}
 		.token{
-			color: black;
+			color: #fff;
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 		body {
@@ -164,7 +164,7 @@ function isMobileDevice() {
 			font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 			margin: 0;
 			padding: 0;
-			background-color: black;
+			background-color: blue;
 			color:rgb(0, 0, 0);
  overflow:scroll;
 			background-repeat: no-repeat;
@@ -180,7 +180,7 @@ function isMobileDevice() {
 			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 		}
 		header {
-      background: linear-gradient(to bottom, black, white);
+			background: linear-gradient(to bottom, #3498db, #8e44ad);
 			color: #000000;
 			display: flex;
 			justify-content: space-between;
@@ -253,9 +253,9 @@ function isMobileDevice() {
 			padding: 0;
 		}
     #featured-games li {
-      background: linear-gradient(to bottom, black, white);
-      border: 3px solid #ccc;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+      border: 3px solid #00ffdd;
+      color:white;
       flex-basis: calc(33.33% - 20px);
       margin-bottom: 20px;
       padding: 20px;
@@ -265,7 +265,7 @@ function isMobileDevice() {
   }
 
 		#featured-games li:hover {
-			box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+			box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
 			transform: translateY(-5px);
 		}
 		#featured-games li img {
@@ -290,7 +290,8 @@ function isMobileDevice() {
 			width: 100%;
 		}
 		footer {
-      background: linear-gradient(to bottom, black, white);
+			background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+			color: white;
 			padding: 20px;
 			text-align: center;
 		}
@@ -298,23 +299,191 @@ function isMobileDevice() {
 			margin: 0;
 			padding: 0;
 		}
-		@media (max-width: 768px) {
-			header {
-			flex-direction: column;
+		@media (max-width: 1000px) {
+			/* Common styles for both large and small screens */
+	#sticky-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: #333;
+		color: white;
+		padding: 10px;
+		z-index: 100;
+		background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+	  }
+	  
+	
+	  .red {
+		color: red;
+	  }
+	  
+	  .paro {
+		color: #ffffff;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	  }
+	  
+	  h2 {
+		color:  rgb(255, 255, 255);
+		text-align: center;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+		border: 3px solid #fff;
+	
+	  
+	  .img {
+		position: relative;
+		width: 5%;
+		height: 50%;
+		border-style: double;
+		border-radius: 10px;
+		opacity: 80%;
+	  }
+	  
+	  .token {
+		color: rgb(255, 255, 255);
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	  }
+	  
+	  body {
+		margin-top: 80px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #000000;
+		color: rgb(255, 255, 255);
+		overflow: scroll;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		overflow-x: hidden;
+	  }
+	  
+	  b {
+		color: red;
+	  }
+	  
+	  p {
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	  }
+	  
+	  header {
+		background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+		color: #000000;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	  }
+	  
+	  nav ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 3px;
+	  }
+	  
+	  nav li {
+		margin: 0 10px;
+	  }
+	  
+	  nav a {
+		color: #000000;
+		text-decoration: none;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	  }
+	  
+	  nav a:hover {
+		color: #000000;
+	  }
+	  
+	  main {
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 20px;
+	  }
+	  
+	  
+	  .welcome-text {
+		animation: slide-in 1s ease-out forwards;
+	  }
+	  
+	  @keyframes slide-in {
+		from {
+		  transform: translateX(-100%);
+		  opacity: 0;
+		}
+		to {
+		  transform: translateX(0);
+		  opacity: 1;
+		}
+	  }
+	  
+	  #featured-games {
+		margin-top: 50px;
+	  }
+	  
+	  #featured-games ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  #featured-games li {
+		background: linear-gradient(to bottom, #002f5d, #8989ff);
+				border: 3px solid  rgb(0, 247, 255);
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		flex-basis: calc(33.33% - 20px);
+		margin-bottom: 20px;
+		padding: 0;
+		text-align: center;
+		margin-top: 10px;
+	  }
+	  
+	  #featured-games li:hover {
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		transform: translateY(-5px);
+	  }
+	  
+	  #featured-games li img {
+		max-width: 100%;
+	  }
+	  
+	  #about {
+		margin-top: 50px;
+	  }
+	  
+	  #contact {
+		margin-top: 50px;
+	  }
+	  
+	  form label {
+		display: block;
+		margin-bottom: 5px;
+	  }
+	  
+	  
+	  
+	  footer {
+		background: linear-gradient(to bottom, #002f5d, #1a1a2e);
+		padding: 20px;
+		text-align: center;
+	  }
+	  
+	  footer p {
+		margin: 0;
+		padding: 0;
+	  }
+				
 			}
-			nav ul {
-				flex-direction: column;
-			}
-
-			nav li {
-				margin: 10px 0;
-			}
-
-			#featured-games li {
-				flex-basis: 100%;
-				margin: 10px 0;
-			}
-		}				
+	   h3{
+		color: rgb(0, 0, 0);
+	   }
+	}		
 	</style>
 
 	</body>
