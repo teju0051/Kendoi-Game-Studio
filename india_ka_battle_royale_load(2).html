@@ -294,8 +294,6 @@
 </head>
 <body>
 	<script type="text/javascript" charset="utf-8">
-		// TODO: Replace the following with your app's Firebase project configuration
-		// See: https://support.google.com/firebase/answer/7015592
 		const firebaseConfig = {
 			apiKey: "AIzaSyB7xLKz8kO0twjl22yt9noWfK9DUO7lSx0",
 			authDomain: "bhartiya-warrior.firebaseapp.com",
@@ -349,10 +347,6 @@
 										<form id="signupform" method="post">
 											<div class="section text-center">
 												<h4 class="mb-4 pb-3">Sign Up</h4>
-												<div class="form-group">
-													<input type="text" name="signupname" class="form-style" placeholder="Your Full Name" id="signupname" autocomplete="off">
-													<i class="input-icon uil uil-user"></i>
-												</div>
 												<div class="form-group mt-2">
 													<input type="email" name="signupemail" class="form-style" placeholder="Your Email" id="signupemail" autocomplete="off">
 													<i class="input-icon uil uil-at"></i>
@@ -388,12 +382,12 @@
 				console.log("User added");
 				console.log(user);
 				
-				// Ye comment delete karke isi line pe tu apna code likh dena (popup wala etc)
+				alert("Thank You for signing up for Bhartiya Warrior. Make sure you don't forget your password while logging into the game!");
 			})
 			.catch((error) => {
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				console.log(errorMessage);
+				alert(errorMessage);
 			});
 		});
 		document.getElementById("loginform").addEventListener("submit", function(e) {
@@ -408,16 +402,12 @@
 				var user = userCredential.user;
 				console.log("User signed in");
 				console.log(user);
-				window.location.href = "https://teju0051.github.io/TGames/india_ka_battle_royale_lobby_load.html"; // ye jaise code likha waise niche ban-check ke liye code hoga. Tab tak yaha pe popup lagana
-				
-				// Ye comment delete karke isi line pe tu apna code likh dena (popup wala etc)
+				alert("You cannot yet access the Game as it is in development stage. We will make sure to notify you first when the game is launched!");
 			})
 			.catch((error) => {
 				var errorCode = error.code;
 				var errorMessage = error.message;
-				console.log(errorMessage);
-				
-				// Iss comment ko delete karke popup ya fir wrong password aur email ka text dikhana
+				alert(errorCode);
 			});
 		});
 	</script>
