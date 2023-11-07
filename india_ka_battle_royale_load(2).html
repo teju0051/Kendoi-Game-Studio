@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Signup/Login</title>
+	<title>BW Login</title>
 	<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js" charset="utf-8"></script>
 	<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js" charset="utf-8"></script>
 	<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js" charset="utf-8"></script>
@@ -151,8 +151,6 @@
 			z-index: 20;
 			display: block;
 		}
-
-
 		.form-group {
 			position: relative;
 			display: block;
@@ -240,7 +238,6 @@
 			-webkit-transition: all 200ms linear;
 			transition: all 200ms linear;
 		}
-
 		.btn {
 			border-radius: 4px;
 			height: 44px;
@@ -293,18 +290,6 @@
 			width: auto;
 			display: block;
 		}
-		/* Media query for smaller screens */
-@media (max-width: 1000px) {
-  .card-3d-wrap {
-    width: 100%;
-    max-width: none;
-  }
-
-  .form-style {
-    width: 80%;
-  }
-}
-
 	</style>
 </head>
 <body>
@@ -340,21 +325,23 @@
 							<div class="card-3d-wrapper">
 								<div class="card-front">
 									<div class="center-wrap">
-										<div class="section text-center">
-											<h4 class="mb-4 pb-3">Log In</h4>
-											<div class="form-group">
-												<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
-												<i class="input-icon uil uil-at"></i>
+										<form id="loginform" method="post" accept-charset="utf-8">
+											<div class="section text-center">
+												<h4 class="mb-4 pb-3">Log In</h4>
+												<div class="form-group">
+													<input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+													<i class="input-icon uil uil-at"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<input type="submit" class="btn mt-4" value="Submit" />
+												<p class="mb-0 mt-4 text-center">
+													<a href="#0" class="link">Forgot your password?</a>
+												</p>
 											</div>
-											<div class="form-group mt-2">
-												<input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
-												<i class="input-icon uil uil-lock-alt"></i>
-											</div>
-											<a href="#" class="btn mt-4">Submit</a>
-											<p class="mb-0 mt-4 text-center">
-												<a href="#0" class="link">Forgot your password?</a>
-											</p>
-										</div>
+										</form>
 									</div>
 								</div>
 								<div class="card-back">
@@ -387,21 +374,50 @@
 		</div>
 	</div>
 	<!-- partial -->
+	<!--iss comment ke niche hi apna html wala code likhna popup wagera ka. Form wala code change mat karna-->
 	<script type="text/javascript" charset="utf-8">
 		document.getElementById("signupform").addEventListener("submit", function(e) {
 			e.preventDefault();
 
 			const signupemail = document.getElementById("signupemail").value;
 			const signuppass = document.getElementById("signuppass").value;
+
 			firebase.auth().createUserWithEmailAndPassword(signupemail, signuppass)
 			.then((userCredential) => {
 				var user = userCredential.user;
 				console.log("User added");
+				console.log(user);
+				
+				// Ye comment delete karke isi line pe tu apna code likh dena (popup wala etc)
 			})
 			.catch((error) => {
 				var errorCode = error.code;
 				var errorMessage = error.message;
 				console.log(errorMessage);
+			});
+		});
+		document.getElementById("loginform").addEventListener("submit", function(e) {
+			e.preventDefault();
+
+			const logemail = document.getElementById("logemail").value;
+			const logpass = document.getElementById("logpass").value;
+
+			firebase.auth().signInWithEmailAndPassword(logemail, logpass)
+			.then((userCredential) => {
+				// Signed in
+				var user = userCredential.user;
+				console.log("User signed in");
+				console.log(user);
+				window.location.href = "https://teju0051.github.io/TGames/india_ka_battle_royale_lobby_load.html"; // ye jaise code likha waise niche ban-check ke liye code hoga. Tab tak yaha pe popup lagana
+				
+				// Ye comment delete karke isi line pe tu apna code likh dena (popup wala etc)
+			})
+			.catch((error) => {
+				var errorCode = error.code;
+				var errorMessage = error.message;
+				console.log(errorMessage);
+				
+				// Iss comment ko delete karke popup ya fir wrong password aur email ka text dikhana
 			});
 		});
 	</script>
