@@ -1,1 +1,1 @@
-# TGames powered by T-Services
+# T-Games powered by T-Services
