@@ -1,5 +1,5 @@
 <title>Tic Tac Toe</title>
-  <link rel="icon" type="x-image" href="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png">
+  <link rel="icon" type="x-image" href="https://i.ibb.co/T27DDxG/Check-out-my-new-logo-made-on-Looka-Google-Chrome-10-28-2023-12-05-15-PM-Copy.png">
 	<style>
 		@media (min-width: 768px) {
 			.logo {
@@ -9,10 +9,17 @@
 			  width: 100px; /* adjust the size as needed */
 			  height: auto;
 			  margin: 10px;
+			  border-color: white;
+			  box-shadow: 0 0 10px white;
 			}
 		}	.but{
       background-color: #333;
       padding: 20px;
+	  color: white;
+	  text-align: center;
+	  box-shadow: 0 0 10px white;
+	  border-color: white;
+	  background: linear-gradient(45deg, #01ccff, #f85b00);
     }
 
     .img {
@@ -20,11 +27,12 @@
       width: 300px;
       margin-bottom: 20px;}
   body {
-        background-color: #111;
-        color: green;
+	background: linear-gradient(45deg, #f85b00, #01ccff);
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;
-        line-height: 1.5;
+        line-height: 1.5; 
+		zoom: 0.9; /* Zoom the body to 90% */
+
     }
 
     /* Header */
@@ -32,16 +40,27 @@
         padding: 20px;
         text-align: center;
         background-color: #222;
-        border-bottom: 2px solid green;
+        border-bottom: 2px solid white;
+		background: linear-gradient(45deg, #f85b00, #01ccff);
     }
-
+	h1 {
+		color: white;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-size: 32px; /* Adjust the font size as needed */
+		font-weight: bold;
+		margin-bottom: 20px; /* Adjust margin as needed */
+		text-align: center; /* Center the text if desired */
+		text-transform: uppercase; /* Convert text to uppercase */
+	}
+	
     /* Navigation */
     nav {
         margin-top: 20px;
         padding: 10px;
         background-color: #333;
-        border: 2px solid green;
-        box-shadow: 0 0 10px green;
+        border: 2px solid white;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+		background: linear-gradient(45deg, #01ccff, #f85b00);
     }
 
     nav ul {
@@ -55,35 +74,33 @@
         color: #fff;
         text-decoration: none;
     }  nav a:hover {
-        color: green;
+        color: #252525;
         text-decoration: underline;
-    }  main {
-        padding: 20px;
-        background-color: #222;
-        border: 2px solid green;
-        box-shadow: 0 0 10px green;
+    
     } button {
         padding: 10px 20px;
         border: none;
-        border-radius: 5px;
-        background-color: green;
+        border-radius: 10px;
+        background-color: #750000;
         color: #fff;
         font-size: 18px;
         cursor: pointer;
     }    button:hover {
-        background-color: rgb(1, 255, 1);
+		background: linear-gradient(45deg, #01ccff, #f85b00);
     }   img {
         max-width: 100%;
         height: auto;
         margin: 20px 0;
-        box-shadow: 0 0 10px green;
         max-height: 130px;
         align-content:flex-start;
     } footer {
         padding: 20px;
         text-align: center;
         background-color: #222;
-        border-top: 2px solid green;
+		color:white;
+        box-shadow: 0 0 10px white;
+	  border-color: white;
+		background: linear-gradient(45deg, #01ccff, #f85b00);
     }
     #button-container {
       position: fixed;
@@ -93,21 +110,30 @@
       transform: translateX(30%);
 
     }table {
-			border-collapse: collapse;
-			margin: auto;
-		}
-		td {
-			width: 100px;
-			height: 100px;
-			text-align: center;
-			vertical-align: middle;
-			border: 1px solid black;
-			font-size: 48px;
-			cursor: pointer;
-		}
-		td:hover {
-			background-color: #eee;
-		}
+		border-collapse: collapse;
+		margin: auto;
+		width: 80%; /* Adjust the width of the table as needed */
+		margin-top: 20px; /* Add some space above the table */
+		box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); /* White glowing shadow effect */
+	}
+	
+	td {
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid #2196F3; /* Use a blue color for the border */
+		font-size: 24px; /* Adjust the font size for better readability */
+		cursor: pointer;
+		transition: background-color 0.3s ease; /* Add a smooth transition effect */
+	}
+	
+	td:hover {
+		background-color: #E3F2FD; /* Use a lighter blue for hover effect */
+		transform: scale(1.1); /* Add a slight scale effect on hover */
+	}
+	
+	
     hr{
       color:red;
     }
@@ -120,11 +146,49 @@
 		margin: 10px; 
 		align-content:flex-start;
 	  }
+
+	  @keyframes confetti {
+		0% {
+		  transform: translateY(0) rotate(0deg);
+		}
+		100% {
+		  transform: translateY(-1000px) rotate(720deg);
+		}
+	  }
+	  
+	  .confetti {
+		width: 10px;
+		height: 10px;
+		background-color: red;
+		position: absolute;
+		opacity: 0.8;
+		animation: confetti 4s ease-out infinite;
+	  }
+	  
+	  .winner-message {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 24px;
+		color:red;
+	  }
+	  
+	  td {
+		width: 150px; /* Set your desired width */
+		height: 150px; /* Set your desired height */
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid black;
+		font-size: 48px;
+		cursor: pointer;
+	  }
   </style>
 </head>
 <body>
+	
 	<header>
-		<img class="logo" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
+		<img class="logo" src="https://i.ibb.co/T27DDxG/Check-out-my-new-logo-made-on-Looka-Google-Chrome-10-28-2023-12-05-15-PM-Copy.png" alt="Logo">
 		<h1>Tic-Tac-Toe</h1>
 	</header><nav>
     <ul>
@@ -139,65 +203,79 @@
           <center>
           <table border="4">
             <tr>
-              <td bgcolor="cyan" id="cell00"></td>
-              <td bgcolor="cyan"id="cell01"></td>
-              <td bgcolor="cyan"id="cell02"></td>
+              <td bgcolor="white" id="cell00"></td>
+              <td bgcolor="white"id="cell01"></td>
+              <td bgcolor="white"id="cell02"></td>
             </tr>
             <tr>
-              <td bgcolor="cyan"id="cell10"></td>
-              <td bgcolor="cyan"id="cell11"></td>
-              <td bgcolor="cyan" id="cell12"></td>
+              <td bgcolor="white"id="cell10"></td>
+              <td bgcolor="white"id="cell11"></td>
+              <td bgcolor="white" id="cell12"></td>
             </tr>
             <tr>
-              <td bgcolor="cyan"id="cell20"></td>
-              <td bgcolor="cyan"id="cell21"></td>
-              <td bgcolor="cyan"id="cell22"></td>
+              <td bgcolor="white"id="cell20"></td>
+              <td bgcolor="white"id="cell21"></td>
+              <td bgcolor="white"id="cell22"></td>
             </tr>
           </table>
         </center>
         <br>
-        <hr>
+    
         <br>
-
+		<div id="confettiContainer"></div>
 		<h4 class="but">OPTIONS</h4>
 		<button onclick="location.reload()">RESTART</button>
-		<button id="backButton">BACK</button>
-
+		<button id="backButton" onclick="window.location.href='https://teju0051.github.io/TGames/Home.html';">BACK</button>
 		<button onclick="alert('COOMING SOON')">PLAY WITH COMPUTER</button>
 		<button onclick="window.location.href='https://forms.gle/fnfGjyd4nwComz9F8';">FEEDBACK</button>
          <br>
          <br>
+		 <audio id="winSound" src="https://teju0051.github.io/TGames/victory%20sound%20effect.mp3"></audio>
+
           <script>
 
-          document.getElementById("backButton").addEventListener("click", function() {
-  window.history.back();
-});
-
-
-
-            var player = "X";
-            var board = [
-              ["", "", ""],
-              ["", "", ""],
-              ["", "", ""]
-            ];
-
-            function handleClick(row, col) {
-              var cell = document.getElementById("cell" + row + col);
-              if (board[row][col] == "") {
-                cell.innerHTML = player;
-                board[row][col] = player;
-                if (checkWin()) {
-                  alert(player + " wins!");
-                  resetBoard();
-                } else if (checkTie()) {
-                  alert("It's a tie!");
-                  resetBoard();
-                } else {
-                  player = (player == "X") ? "O" : "X";
-                }
-              }
-            }
+			document.getElementById("backButton").addEventListener("click", function () {
+				window.history.back();
+			  });
+			  
+			  var player = "X";
+			  var board = [
+				["", "", ""],
+				["", "", ""],
+				["", "", ""]
+			  ];
+			  
+			  function handleClick(row, col) {
+				var cell = document.getElementById("cell" + row + col);
+				if (board[row][col] == "") {
+				  // Create an image element
+				  var img = document.createElement("img");
+			  
+				  // Set the source based on the current player
+				  img.src = (player == "X")
+					? "https://i.ibb.co/swFLjYW/Check-out-my-new-logo-made-on-Looka-Google-Chrome-1-7-2024-9-54-34-PM-removebg-preview.png"
+					: "https://i.ibb.co/wKcKzKZ/snapedit-1704643550595-removebg-preview.png";
+			  
+				  // Set the alt attribute for accessibility
+				  img.alt = player;
+			  
+				  // Append the image element to the cell
+				  cell.appendChild(img);
+			  
+				  // Update the board
+				  board[row][col] = player;
+			  
+				  if (checkWin()) {
+					alert(player + " wins!");
+					resetBoard();
+				  } else if (checkTie()) {
+					alert("It's a tie!");
+					resetBoard();
+				  } else {
+					player = (player == "X") ? "O" : "X";
+				  }
+				}
+			  }
 
             function checkWin() {
               for (var i = 0; i < 3; i++) {
@@ -249,76 +327,81 @@
               });
             }
           }
-          function botTurn() {
-            var i = Math.floor(Math.random() * 3);
-            var j = Math.floor(Math.random() * 3);
-            if (board[i][j] == "") {
-              board[i][j] = "O";
-              document.getElementById("cell" + i + j).innerHTML = "O";
-              return true;
-            }
-            return false;
-          }
+       
 
 
+		  function checkWin() {
+			for (var i = 0; i < 3; i++) {
+			  if (board[i][0] != "" && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+				playWinSound();
+				return true;
+			  }
+			  if (board[0][i] != "" && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+				playWinSound();
+				return true;
+			  }
+			}
+			if (board[0][0] != "" && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+			  playWinSound();
+			  return true;
+			}
+			if (board[0][2] != "" && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+			  playWinSound();
+			  return true;
+			}
+			return false;
+		  }
+		  
+		  function playWinSound() {
+			var winSound = document.getElementById("winSound");
+			winSound.play();
+		  }
+		  
+
+		  function playWinSound() {
+			var winSound = document.getElementById("winSound");
+			winSound.play();
+			showCelebration();
+		  }
+		  
+		  function showCelebration() {
+			var confettiContainer = document.createElement("div");
+			confettiContainer.className = "confetti-container";
+		  
+			for (var i = 0; i < 100; i++) {
+			  var confetti = document.createElement("div");
+			  confetti.className = "confetti";
+			  confetti.style.left = Math.random() * 100 + "vw";
+			  confetti.style.animationDelay = Math.random() + "s";
+			  confettiContainer.appendChild(confetti);
+			}
+		  
+			document.body.appendChild(confettiContainer);
+		  
+			setTimeout(function () {
+			  document.body.removeChild(confettiContainer);
+			}, 9000); // Adjust the time to match the confetti animation duration
+		  }
+		  
+
+		  
+		   // Create an image element
+		   var img = document.createElement("img");
+
+		   // Set the source based on the current player
+		   img.src = (player == "X") ? "url_to_x_image" : "url_to_o_image";
+	   
+		   // Set the alt attribute for accessibility
+		   img.alt = player;
+	   
+		   // Append the image element to the cell
+		   cell.appendChild(img);
+	   
         </script>
 
 
-	<footer><p id="welcome-text">&copy; 2023 T-Service. All rights reserved.</p>
-    <div class="loading-screen">
-      <img class="logol" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
-      <h2>Tic-Tac-Toe</h2>
-      <p>Loading...</p>
-    
-    </div>
-    <script>
-      // Hide the loading screen after 5 seconds
-      window.onload = function() {
-          var loadingScreen = document.querySelector('.loading-screen');
-          setTimeout(function() {
-              loadingScreen.style.display = 'none';
-          }, 10000);
-      };
-    </script>
-    <style>
-    /* Your existing styles here */
-    
-    /* New styles for the loading screen */
-    .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #111;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 999;
-    }
-    
-    .loading-screen h2 {
-        color: green;
-        font-size: 24px;
-    }
-    
-    .loading-screen p {
-        color: green;
-        font-size: 18px;
-    }
-    
-    .loading-screen .logo {
-        opacity: 0;
-        animation: fade-in-out 5s ease-in-out;
-    }
-    
-    @keyframes fade-in-out {
-        0% { opacity: 0; }
-        20% { opacity: 1; }
-        80% { opacity: 1; }
-        100% { opacity: 0; }
-    }
-    </style>
+	<footer><p id="welcome-text">&copy; 2023 T-Service. All rights reserved.</p></footer>
+
+
     </body>
     </html>
