@@ -1,30 +1,377 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TGames</title>
-	<link rel="stylesheet" href="style.css">
-<link rel="icon" href="https://www.linkpicture.com/q/watermark_preview_image20230304-21487-1h96rcb-removebg-preview.png" type="image">
+	<title>BW | Characters section</title>
+	<style>
+  
+		#banner {
+			position: relative;
+			left: 0; /* Remove the negative left value */
+		}
+		
+		#banner::after {
+			content: "";
+			background-image: url('https://i.ibb.co/59T1Tcs/bw-logo.png');
+			background-size: cover;
+			width: 80%; /* Set the width to 80% for larger screens */
+			height: 95vh; /* Adjust the height as needed; using viewport height for responsiveness */
+			transform: scale(3.2); /* Adjust the scale value for zooming in */
+		
+		}
+		#sticky-header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #0f0f1a;
+			color: white;
+			padding: 10px;
+			z-index: 100;
+		  }
+		
+			   .paro {
+				   color: #FFD700; /* Gold color */
+				   font-family: 'Noto Sans', sans-serif;
+				}
+				
+				h1{
+					font-size:large;
+				}
+				h2 {
+				   color: #FFD700;
+				   text-align: center;
+				   font-family: 'Noto Sans', sans-serif;
+				   background-color: #8B0000; /* Dark red color */
+				}
+				
+				.img {
+				   position: relative;
+				   width: 5%;
+				   height: 50%;
+				   border-style: double;
+				   border-radius: 10px;
+				}
+				
+				.token {
+				   color: #000;
+				   font-family: 'Noto Sans', sans-serif;
+				}
+				
+				body {
+				   font-family: 'Noto Sans', sans-serif;
+				   margin: 0;
+				   padding: 0;
+				   background-color: #2C3E50; /* Dark blue-gray color */
+				   color: #FF4500; /* Orange-Red color */
+				   font-size: 16px;
+				   overflow-x: hidden;
+				}
+				
+				b {
+				   color: #FF0000; /* Bright red color */
+				}
+				
+				p {
+					font-size: large;
+				   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+				}
+				
+				header {
+				   background-color: #8B0000;
+				   color: #FFD700;
+				   display: flex;
+				   justify-content: space-between;
+				   align-items: center;
+				   padding: 20px;
+				   font-family: 'Noto Sans', sans-serif;
+				   padding: 20px 0;
+				   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				   position: relative;
+				}
+				
+				header:before {
+				   content: "";
+				   position: absolute;
+				   top: 100%;
+				   left: 0;
+				   width: 100%;
+				   height: 10px;
+				   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+				   z-index: -1;
+				}
+				
+				
+				nav ul {
+				   display: flex;
+				   list-style: none;
+				   margin: 0;
+				   padding: 0;
+				}
+				
+				nav li {
+				   margin: 0 10px;
+				}
+				
+				nav a {
+				   color: #fff;
+				   text-decoration: none;
+				   font-family: 'Noto Sans', sans-serif;
+				   transition: color 0.3s ease;
+				}
+				
+				nav a:hover {
+				   color: #ccc;
+				   text-decoration: underline;
+				}
+				
+				main {
+				   max-width: 960px;
+				   margin: 0 auto;
+				   padding: 20px;
+				}
+				
+				#banner {
+				   background-image: url(banner.jpg);
+				   background-size: cover;
+				   background-position: center;
+				   color: #FFD700;
+				   display: flex;
+				   flex-direction: column;
+				   align-items: center;
+				   justify-content: center;
+				   height: 400px;
+				   text-align: center;
+				   font-family: 'Noto Sans', sans-serif;
+				   font-size: 46px;
+				   font-size: 34px;
+				}
+				
+				#welcome-text {
+				   animation: slide-in 1s ease-out forwards;
+				}
+				
+				@keyframes slide-in {
+				   from {
+					  transform: translateX(-100%);
+					  opacity: 0;
+				   }
+				   to {
+					  transform: translateX(0);
+					  opacity: 1;
+				   }
+				}
+				
+				#featured-games {
+				   margin-top: 50px;
+				}
+				
+				#featured-games ul {
+				   display: flex;
+				   flex-wrap: wrap;
+				   justify-content: space-between;
+				   list-style: none;
+				   margin: 0;
+				   padding: 0;
+				}
+				
+				@keyframes shine {
+				   from {
+					  background-position: -200%;
+				   }
+				   to {
+					  background-position: 200%;
+				   }
+				}
+				
+				#featured-games li {
+				   background-color: #FFD700;
+				   border: 1px solid #FF4500;
+				   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+				   flex-basis: calc(33.33% - 20px);
+				   margin-bottom: 20px;
+				   padding: 20px;
+				   text-align: center;
+				   position: relative;
+				   overflow: hidden;
+				   transition: transform 0.3s ease;
+				}
+				
+				#featured-games li:before {
+				   content: '';
+				   position: absolute;
+				   top: 0;
+				   left: 0;
+				   right: 0;
+				   bottom: 0;
+				   background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.15));
+				   background-size: 200% 100%;
+				   animation: shine 2s infinite linear;
+				}
+				
+				#featured-games li:hover {
+				   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+				   transform: translateY(-10px);
+				}
+				
+				#featured-games li img {
+				   max-width: 100%;
+				}
+				
+				#about {
+				   margin-top: 50px;
+				}
+				
+				#contact {
+				   margin-top: 50px;
+				}
+				
+				form label {
+				   display: block;
+				   margin-bottom: 5px;
+				}
+				
+				form input,
+				form textarea {
+				   border: 1px solid #ddd;
+				   font-size: 16px;
+				   margin-bottom: 15px;
+				   padding: 10px;
+				   width: 100%;
+				   border-radius: 5px;
+				}
+				
+				form input[type="submit"] {
+				   background-color: #1a1a1a;
+				   color: #fff;
+				   cursor: pointer;
+				   font-size: 16px;
+				   padding: 10px 20px;
+				}
+				
+				form input[type="submit"]:hover {
+				   background-color: #be9e44;
+				}
+				
+				footer {
+				   background-color: #333;
+				   padding: 20px;
+				   text-align: center;
+				   border-top: 1px solid #555;
+				}
+				
+				footer p {
+				   margin: 0;
+				   padding: 0;
+				}
+				
+				/* Hide the welcome message by default */
+				#welcome-message {
+					display: none;
+				}
+				@media (max-width: 1000px) {
+				   header {
+					  flex-direction: column;
+				   }
+				   nav ul {
+					  flex-direction: column;
+				   }
+				   nav li {
+					  margin: 10px 0;
+				   }
+				   #featured-games li {
+					  flex-basis: 100%;
+					  margin: 10px 0;
+				   }
+				}
+				@media (max-width: 768px) {
+					/* Media query for screens up to 768px width */
+					#banner::after {
+						display: none; /* Hide the banner image on smaller screens */
+					}
+				
+					#welcome-message {
+						text-align: center;
+						margin: 20px;
+						display: block; /* Show the welcome message */
+					}
+				}
+				
+			
+				.search-container {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					
+					padding: 10px;
+				  }
+				  
+				  .search-input {
+					padding: 10px;
+					border: none;
+					border-radius: 5px;
+					outline: none;
+					background-color: #3498db; /* Blue color */
+					color: white;
+					box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White border shadow */
+				}
+				
+				.search-button {
+					margin-left: 5px;
+					padding: 10px;
+					background-color: #3498db; /* Blue color */
+					color: #fff;
+					border: none;
+					border-radius: 5px;
+					cursor: pointer;
+					box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* White border shadow */
+				}
+				
+				/* Optional: Style the button on hover */
+				.search-button:hover {
+					background-color: #4a90e2; /* Darker blue on hover */
+				}
+				
+				.search-input::placeholder {
+					color: #ecf0f1; /* Light gray for the placeholder text */
+				}
+				
+				
+		   </style>
 	
+<link rel="icon" href="https://i.ibb.co/59T1Tcs/bw-logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 </head>
 <body>
-	<header>
-		<img src="https://i.ibb.co/T27DDxG/Check-out-my-new-logo-made-on-Looka-Google-Chrome-10-28-2023-12-05-15-PM-Copy.png" class="img" type="image" id="welcome-text">
+	<header id="sticky-header">
+		<img src="https://i.ibb.co/59T1Tcs/bw-logo.png" class="img" type="image" id="welcome-text">
 		<nav>
 			<ul>
-				<li id="welcome-text"><a href="https://teju0051.github.io/TService/home.html" class="token">Home</a></li>
-				<li id="welcome-text"><a href="https://teju0051.github.io/TGames/Home.html"class="token">Games</a></li>
-				<li id="welcome-text"><a href="https://teju0051.github.io/TTech/Home.html"class="token">Tech</a></li>
-				<li id="welcome-text"><a href="https://forms.gle/fbzUBsc5TK2oNCa17"class="token">Contact Us</a></li>
+				<li>
+					<div class="search-container">
+						<button  class="search-button" onclick="window.location.href='https://teju0051.github.io/TService/home.html';">Home</button>
+						<button disabled>ㅤ</button>
+						<input type="text" class="search-input" placeholder="Search" id="searchInput">
+						<button class="search-button" onclick="performSearch()">🔍</button>
+						
+					  </div>
+				</li>
+				
 			</ul>
 		</nav>
 	</header>
 	
 	<main>
 		<section id="banner">
-			<h1 id="welcome-text">Welcome to Character's Page</h1>
-			<p id="welcome-text">Here is all the character story, Just click onthe character you want to see biography.</p>
+			
+			<div id="welcome-message">
+				<h1>Welcome to Character's Page</h1>
+				<p>Here is all the character story. Just click on the character you want to see the biography.</p>
+			</div>
 		</section>
-		
+
 		<section id="featured-games">
 			<h2 id="welcome-text">Characters</h2>
 			<ul>
@@ -68,264 +415,72 @@
 		</section>
 		
 		<section id="about">
-			<h2 id="welcome-text">About TGames</h2>
-			<p class="paro" id="welcome-text">TGames is a gaming company that provides the best gaming experience for all the gamers out there. With our wide range of games, we ensure that you will never get bored. We are dedicated to providing you with the latest and most popular games that will keep you engaged for hours.
-                          T-Games is Operated by T-Services</p>
+			<h2 id="welcome-text">About Bharatiya warrior</h2>
+			<p class="paro" id="welcome-text"> "BW" is described as a Bharatiya Warrior, game developed by Indian developers at Mastrovert Game Production,
+				 with the game development taking place at T-Games Studio. The publishing support is provided by MGP (Mastrovert Game Production).</p>
 		</section>
 	
 	
 	<footer>
-		<p id="welcome-text">&copy; 2023 T-Services. All rights reserved.</p>
+		<p id="welcome-text">&copy; 2023-2024 T-Services. All rights reserved.</p>
 	</footer>
-	<style>
-  
-		.paro {
-			color: #FFD700; /* Gold color */
-			font-family: 'Noto Sans', sans-serif;
-		 }
-		 
-		 h2 {
-			color: #FFD700;
-			text-align: center;
-			font-family: 'Noto Sans', sans-serif;
-			background-color: #8B0000; /* Dark red color */
-		 }
-		 
-		 .img {
-			position: relative;
-			width: 5%;
-			height: 50%;
-			border-style: double;
-			border-radius: 10px;
-		 }
-		 
-		 .token {
-			color: #000;
-			font-family: 'Noto Sans', sans-serif;
-		 }
-		 
-		 body {
-			font-family: 'Noto Sans', sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #2C3E50; /* Dark blue-gray color */
-			color: #FF4500; /* Orange-Red color */
-			font-size: 16px;
-		 }
-		 
-		 b {
-			color: #FF0000; /* Bright red color */
-		 }
-		 
-		 p {
-			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-		 }
-		 
-		 header {
-			background-color: #8B0000;
-			color: #FFD700;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 20px;
-			font-family: 'Noto Sans', sans-serif;
-			padding: 20px 0;
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			position: relative;
-		 }
-		 
-		 header:before {
-			content: "";
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 100%;
-			height: 10px;
-			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
-			z-index: -1;
-		 }
-		 
-		 
-		 nav ul {
-			display: flex;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		 }
-		 
-		 nav li {
-			margin: 0 10px;
-		 }
-		 
-		 nav a {
-			color: #fff;
-			text-decoration: none;
-			font-family: 'Noto Sans', sans-serif;
-			transition: color 0.3s ease;
-		 }
-		 
-		 nav a:hover {
-			color: #ccc;
-			text-decoration: underline;
-		 }
-		 
-		 main {
-			max-width: 960px;
-			margin: 0 auto;
-			padding: 20px;
-		 }
-		 
-		 #banner {
-			background-image: url(banner.jpg);
-			background-size: cover;
-			background-position: center;
-			color: #FFD700;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 400px;
-			text-align: center;
-			font-family: 'Noto Sans', sans-serif;
-			font-size: 46px;
-			font-size: 34px;
-		 }
-		 
-		 #welcome-text {
-			animation: slide-in 1s ease-out forwards;
-		 }
-		 
-		 @keyframes slide-in {
-			from {
-			   transform: translateX(-100%);
-			   opacity: 0;
-			}
-			to {
-			   transform: translateX(0);
-			   opacity: 1;
-			}
-		 }
-		 
-		 #featured-games {
-			margin-top: 50px;
-		 }
-		 
-		 #featured-games ul {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		 }
-		 
-		 @keyframes shine {
-			from {
-			   background-position: -200%;
-			}
-			to {
-			   background-position: 200%;
-			}
-		 }
-		 
-		 #featured-games li {
-			background-color: #FFD700;
-			border: 1px solid #FF4500;
-			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-			flex-basis: calc(33.33% - 20px);
-			margin-bottom: 20px;
-			padding: 20px;
-			text-align: center;
-			position: relative;
-			overflow: hidden;
-			transition: transform 0.3s ease;
-		 }
-		 
-		 #featured-games li:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.15));
-			background-size: 200% 100%;
-			animation: shine 2s infinite linear;
-		 }
-		 
-		 #featured-games li:hover {
-			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-			transform: translateY(-10px);
-		 }
-		 
-		 #featured-games li img {
-			max-width: 100%;
-		 }
-		 
-		 #about {
-			margin-top: 50px;
-		 }
-		 
-		 #contact {
-			margin-top: 50px;
-		 }
-		 
-		 form label {
-			display: block;
-			margin-bottom: 5px;
-		 }
-		 
-		 form input,
-		 form textarea {
-			border: 1px solid #ddd;
-			font-size: 16px;
-			margin-bottom: 15px;
-			padding: 10px;
-			width: 100%;
-			border-radius: 5px;
-		 }
-		 
-		 form input[type="submit"] {
-			background-color: #1a1a1a;
-			color: #fff;
-			cursor: pointer;
-			font-size: 16px;
-			padding: 10px 20px;
-		 }
-		 
-		 form input[type="submit"]:hover {
-			background-color: #be9e44;
-		 }
-		 
-		 footer {
-			background-color: #333;
-			padding: 20px;
-			text-align: center;
-			border-top: 1px solid #555;
-		 }
-		 
-		 footer p {
-			margin: 0;
-			padding: 0;
-		 }
-		 
-		 @media (max-width: 768px) {
-			header {
-			   flex-direction: column;
-			}
-			nav ul {
-			   flex-direction: column;
-			}
-			nav li {
-			   margin: 10px 0;
-			}
-			#featured-games li {
-			   flex-basis: 100%;
-			   margin: 10px 0;
-			}
-		 }
-		 
-	</style>
+	<script>
+		function performSearch() {
+			var searchInput = document.getElementById('searchInput').value.toLowerCase();
+	
 
-</body>
-</html>
+			if (searchInput === 'games' || searchInput === 'tgames' ||  searchInput === 't-games' ||  searchInput === 'Games' ||  searchInput === 'T-Games') {
+			
+				setTimeout(function () {
+					window.location.href = 'https://teju0051.github.io/TGames/Home.html';
+				}, 3000);
+			} else if (searchInput === 'mgp') {
+			
+				setTimeout(function () {
+					window.location.href = 'https://teju0051.github.io/TService/mgp.html';
+				}, 3000); 
+			}
+			else if (searchInput === 'art' || searchInput === 'tart' || searchInput === 't-art') {
+				
+				setTimeout(function () {
+					window.location.href = 'https://teju0051.github.io/TService/mgp.html';
+				}, 3000); 
+			}
+
+			else if (searchInput === 'tech' || searchInput === 't-tech' || searchInput === 'T-tech') {
+				
+				setTimeout(function () {
+					window.location.href = 'https://teju0051.github.io/TService/T-Tech.html';
+				}, 3000); 
+			}
+
+			else {
+				// Handle other searches or add additional conditions
+				alert('No result.');
+			}
+	
+			// Play audio after the search
+			playAudio();
+		}
+	
+		function playAudio() {
+			var audio = new Audio('https://teju0051.github.io/TService/female_voice.mp3'); // Replace with the actual path to your audio file
+			audio.play();
+		}
+	</script>
+	
+	</main>
+	<audio id="myAudio" autoplay>
+		<source src="https://teju0051.github.io/TGames/%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4%E0%A5%80%E0%A4%AF_warrior_welcome.mp3" type="audio/mp3">
+		
+	</audio>
+	
+	<script>
+		// Add this script to play the audio when the page loads
+		window.onload = function() {
+			var audio = document.getElementById("myAudio");
+			audio.play();
+		};
+	</script>
+	</body>
+	</html>
