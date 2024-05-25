@@ -189,11 +189,10 @@ img {
 	</header>
   <nav>
     <ul>
-      <li><a href="https://teju0051.github.io/TService/T-Games.html">HOME</a></li>
+      <li><a href="https://teju0051.github.io/TService/home.html">HOME</a></li>
       <li><a href="https://teju0051.github.io/TService/T-Art.html">T-ART</a></li>
-      <li><a href="https://teju0051.github.io/TService/home.html">T-SERVICE</a></li>
-      <li><a href="https://teju0051.github.io/TService/T-Tech.html">T-TECH</a></li>
-      <li><a href="https://teju0051.github.io/TService/ourteam.html">OUR TEAM</a></li>
+   
+     
       </ul>
       </nav>
       <center>
@@ -203,10 +202,22 @@ img {
 <p id="high"></p>
 <button id="btn_stop" >Pause Game</button>
 <p id="end_msg"></p>
-<canvas width="400" height="400" id="game" align="center"></canvas>
+<canvas width="1300" height="500" id="game" align="center"></canvas>
 </center>
-<hr>
+
 <script>
+
+  // Check if the device is a mobile device
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  // If it's a mobile device, show an alert message and redirect
+  if (isMobileDevice()) {
+    alert("This game does not support mobile devices.");
+    window.location.href = "https://teju0051.github.io/TService/home.html"; // Redirect to the specified page
+  }
+  
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
 var grid = 16;
@@ -410,16 +421,9 @@ function goBack() {
 }
 </script>
 
-<h4 class="but">Controls</h4>
-<button id="up">Up</button>
-<button id="down">Down</button>
-<button id="left">Left</button>
-<button id="right">Right</button> ||
-<button onclick="goBack()">Go Back</button>||
-
 <br><br>
 
-<footer> &copy; 2023 T-Service. All rights reserved.</footer>
+<footer> &copy; 2024 MGP All rights reserved.</footer>
 <div class="loading-screen">
   <img class="logol" src="https://i.ibb.co/9nQqZ75/tgames-fotor-bg-remover-20230414171950.png" alt="Logo">
   <h2>Eat and repeat!</h2>
@@ -432,7 +436,7 @@ function goBack() {
       var loadingScreen = document.querySelector('.loading-screen');
       setTimeout(function() {
           loadingScreen.style.display = 'none';
-      }, 5000);
+      }, 2000);
   };
 </script>
 <style>
