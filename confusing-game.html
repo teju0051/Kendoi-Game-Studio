@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confusion Game</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #111;
+            color: green;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: #222;
+            border-bottom: 2px solid green;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            border: 2px solid green;
+            box-shadow: 0 0 10px green;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: green;
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            background-color: #222;
+            border: 2px solid green;
+            box-shadow: 0 0 10px green;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            background-color: rgb(1, 255, 1);
+        }
+
+        #confuseButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #222;
+            border-top: 2px solid green;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .logo {
+                width: 80px;
+                margin: 5px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin-bottom: 10px;
+            }
+
+            #confuseButton {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+
+            #message {
+                font-size: 18px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="https://i.ibb.co/3TvyZ3y/Check-out-my-new-logo-made-on-Looka-Google-Chrome-05-09-2023-14-12-08.png" alt="Logo">
+        <h1>Caught the button</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="https://teju0051.github.io/TGames/Home.html">HOME</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Try to Click the Button!</h1>
+        <button id="confuseButton">Catch Me!</button>
+        <div id="message"></div>
+    </main>
+
+    <footer>
+        <p id="welcome-text">&copy; 2023 T-Games. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const button = document.getElementById('confuseButton');
+        const message = document.getElementById('message');
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        button.addEventListener('mouseover', moveButton);
+        button.addEventListener('touchstart', moveButton);
+
+        button.addEventListener('click', () => {
+            message.textContent = 'You caught me!';
+            button.removeEventListener('mouseover', moveButton);
+            button.removeEventListener('touchstart', moveButton);
+            button.style.cursor = 'default';
+            button.style.transform = 'scale(1.2)';
+        });
+    </script>
+</body>
+</html>
